@@ -49,6 +49,7 @@ ingress:
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "1800"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
+    nginx.ingress.kubernetes.io/proxy-body-size: 16m
   hosts:
     - host:
       paths: []
@@ -106,7 +107,7 @@ hazelcast:
     --add-opens java.base/java.lang=ALL-UNNAMED
     --add-opens java.base/java.nio=ALL-UNNAMED
     --add-opens java.base/sun.nio.ch=ALL-UNNAMED
-    --add-opens java.management/sun.management=ALL-UNNAMED 
+    --add-opens java.management/sun.management=ALL-UNNAMED
     --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
 
 # Folio specific
