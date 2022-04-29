@@ -41,6 +41,11 @@ spec:
             {{- end }}
             {{- end }}
           env:
+            - name: LIST_OF_ALLOWED_IPS
+              valueFrom:
+                secretKeyRef:
+                  name: okapi-auths
+                  key: ALLOWED_IPS
             - name: OKAPI_POD_NAME
               valueFrom:
                 fieldRef:
