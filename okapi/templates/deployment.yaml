@@ -69,6 +69,11 @@ spec:
                 secretKeyRef:
                   name: db-connect-modules
                   key: DB_PASSWORD
+            - name: ENV
+              valueFrom:
+                secretKeyRef:
+                  key: ENV
+                  name: db-connect-modules      
             - name: JAVA_OPTIONS
               {{- if .Values.hazelcast.enabled }}
               value: {{ cat .Values.javaOptions .Values.hazelcast.javaOptions | quote }}
