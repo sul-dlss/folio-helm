@@ -58,7 +58,7 @@ spec:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: DB_PASSWORD
+                  key: password
                   name: db-connect-modules
             - name: DB_PORT
               valueFrom:

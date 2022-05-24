@@ -54,8 +54,8 @@ spec:
               path: /admin/health
               port: {{ .Values.service.containerPort }}
             failureThreshold: 20
-            periodSeconds: 60
-            timeoutSeconds: 5
+            periodSeconds: 120
+            timeoutSeconds: 60
           env:
             - name: DB_DATABASE
               valueFrom:
@@ -72,7 +72,7 @@ spec:
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: DB_PASSWORD
+                  key: password
                   name: db-connect-modules
             - name: DB_PORT
               valueFrom:
@@ -88,7 +88,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
