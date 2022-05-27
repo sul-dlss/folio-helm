@@ -43,7 +43,7 @@ service:
 
 ingress:
   enabled: false
-  annotations: 
+  annotations:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
@@ -81,7 +81,7 @@ tolerations: []
 affinity: {}
 
 # Folio specific
-javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=85.0 -XX:+UseG1GC
+javaOptions: -Dlog4j2.formatMsgNoLookups=true  --XX:MaxRAMPercentage=40 -XX:+UseG1GC
 dbMaxPoolSize: 5
 
 postJob:
