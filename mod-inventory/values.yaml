@@ -80,7 +80,7 @@ tolerations: []
 affinity: {}
 
 # Folio specific
-javaOptions: -XX:MaxRAMPercentage=66.0 -XX:+UseG1GC -Dorg.folio.metadata.inventory.storage.type=okapi
+javaOptions: -XX:MaxRAMPercentage=66.0 -XX:+UseG1GC -Dorg.folio.metadata.inventory.storage.type=okapi -Dinventory.kafka.DataImportConsumerVerticle.instancesNumber=10 -Dinventory.kafka.MarcBibInstanceHridSetConsumerVerticle.instancesNumber=10 -Dkafka.consumer.max.poll.records=10
 dbMaxPoolSize: 5
 
 postJob:
