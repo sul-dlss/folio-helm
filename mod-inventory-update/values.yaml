@@ -81,7 +81,7 @@ affinity: {}
 
 # Folio specific
 javaOptions: -XX:MaxRAMPercentage=80 -XX:+UseG1GC
-dbMaxPoolSize: 20
+dbMaxPoolSize: 10
 
 postJob:
   enabled: false
