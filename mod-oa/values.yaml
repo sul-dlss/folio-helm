@@ -66,8 +66,8 @@ resources:
   #   cpu: 100m
     memory: 400Mi
 
-javaOptions: -XX:+UseContainerSupport -XX:MaxRAMPercentage=85.0 -XX:+PrintFlagsFinal -XX:+UseG1GC
-dbMaxPoolSize: 5
+javaOptions: -XX:+UseContainerSupport -XX:MaxRAMPercentage=80 -XX:+PrintFlagsFinal -XX:+UseG1GC
+dbMaxPoolSize: 10
 
 postJob:
   enabled: false

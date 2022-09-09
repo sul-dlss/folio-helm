@@ -81,7 +81,7 @@ affinity: {}
 
 # Folio specific
 javaOptions: -Dlog4j2.formatMsgNoLookups=true -XX:MaxRAMPercentage=66.0 -XX:+UseG1GC
-dbMaxPoolSize: 15
+dbMaxPoolSize: 10
 dbReconnectinterval: 1000
 dbReconnectattempts: 3
 

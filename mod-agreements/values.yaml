@@ -61,7 +61,8 @@ resources:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     #cpu: 1500m
-    memory: 2000Mi
+    # memory: 2000Mi
+    memory: 1692Mi
   requests:
     #cpu: 1000m
     memory: 1500Mi
@@ -80,8 +81,8 @@ tolerations: []
 affinity: {}
 
 # Folio specific
-javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=85.0 -XX:+UseG1GC
-dbMaxPoolSize: 5
+javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=80 -XX:+UseG1GC
+dbMaxPoolSize: 10
 
 postJob:
   enabled: false
