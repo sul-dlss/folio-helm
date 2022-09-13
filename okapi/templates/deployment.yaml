@@ -40,6 +40,41 @@ spec:
             - {{ . | quote }}
             {{- end }}
             {{- end }}
+          {{- if .Values.readinessProbeEnabled}}
+          {{- if eq .Values.readinessProbeEnabled true }}
+          readinessProbe:
+            httpGet:
+              path: {{ if .Values.readinessProbe -}} {{ default "/admin/health" .Values.readinessProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
+              port: {{ .Values.service.containerPort }}
+            periodSeconds: {{ if .Values.readinessProbe -}} {{ default 90 .Values.readinessProbe.periodSeconds }} {{- else -}} 90 {{- end }}
+
+            failureThreshold: {{ if .Values.readinessProbe -}} {{ default 30 .Values.readinessProbe.failureThreshold }} {{- else -}} 30 {{- end }}
+            timeoutSeconds: {{ if .Values.readinessProbe -}} {{ default 30 .Values.readinessProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.startupProbeEnabled}}
+          {{- if eq .Values.startupProbeEnabled true }}
+          startupProbe:
+            httpGet:
+              path: {{ if .Values.startupProbe -}} {{ default "/admin/health" .Values.startupProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
+              port: {{ .Values.service.containerPort }}
+            periodSeconds: {{ if .Values.startupProbe -}} {{ default 90 .Values.startupProbe.periodSeconds }} {{- else -}} 90 {{- end }}
+            initialDelaySeconds: {{ if .Values.startupProbe.initialDelaySeconds -}} {{ default 5 .Values.startupProbe.initialDelaySeconds }} {{- else -}} 5 {{- end }}
+            failureThreshold: {{ if .Values.startupProbe -}} {{ default 30 .Values.startupProbe.failureThreshold }} {{- else -}} 30 {{- end }}
+            timeoutSeconds: {{ if .Values.startupProbe -}} {{ default 30 .Values.startupProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.livenessProbeEnabled}}
+          {{- if eq .Values.livenessProbeEnabled true }}
+          livenessProbe:
+            httpGet:
+              path: {{ if .Values.livenessProbe -}} {{ default "/admin/health" .Values.livenessProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
+              port: {{ .Values.service.containerPort }}
+            periodSeconds: {{ if .Values.livenessProbe -}} {{ default 90 .Values.livenessProbe.periodSeconds }} {{- else -}} 90 {{- end }}
+            failureThreshold: {{ if .Values.livenessProbe -}} {{ default 30 .Values.livenessProbe.failureThreshold }} {{- else -}} 30 {{- end }}
+            timeoutSeconds: {{ if .Values.livenessProbe -}} {{ default 30 .Values.livenessProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
+          {{- end }}
+          {{- end }}
           env:
             - name: OKAPI_POD_NAME
               valueFrom:
@@ -49,11 +84,16 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.podIP
-            - name: OKAPI_HOST
+            - name: OKAPI_DB_HOST
               valueFrom:
                 secretKeyRef:
                   name: db-connect-modules
                   key: DB_HOST
+            - name: OKAPI_DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: db-connect-modules
+                  key: DB_PORT
             - name: OKAPI_DB
               valueFrom:
                 secretKeyRef:

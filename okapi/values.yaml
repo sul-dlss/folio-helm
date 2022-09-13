@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount: 5
 
 image:
   repository: folioci/okapi
@@ -115,8 +115,8 @@ args: dev
 javaOptions: >-
   -Djava.awt.headless=true
   -Dstorage=postgres
-  -Dpostgres_host=$(OKAPI_HOST)
-  -Dpostgres_port=5432
+  -Dpostgres_host=$(OKAPI_DB_HOST)
+  -Dpostgres_port=$(OKAPI_DB_PORT)
   -Dpostgres_username=$(OKAPI_DB_USER)
   -Dpostgres_password=$(OKAPI_DB_PASSWORD)
   -Dpostgres_database=$(OKAPI_DB)
@@ -124,6 +124,27 @@ javaOptions: >-
   -Dlog4j2.formatMsgNoLookups=true
   -Dhost=okapi
   -Dokapiurl=http://okapi:9130
+
+startupProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+  failureThreshold: 300
+livenessProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+readinessProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+
+startupProbeEnabled : false
+livenessProbeEnabled : false
+readinessProbeEnabled : false
 
 postJob:
   enabled: false

@@ -66,6 +66,8 @@ resources:
     #cpu: 500m
     memory: 400Mi
 
+livenessProbeEnabled: false
+
 autoscaling:
   enabled: false
   minReplicas: 1
@@ -80,6 +82,27 @@ tolerations: []
 affinity: {}
 
 # Folio specific
+startupProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+  failureThreshold: 300
+livenessProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+readinessProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+
+startupProbeEnabled : false
+livenessProbeEnabled : false
+readinessProbeEnabled : false
+
 postJob:
   enabled: false
   okapiUrl: http://okapi:9130
