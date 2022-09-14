@@ -28,4 +28,4 @@ spec:
     {{- end }}
   selector:
     {{- include "okapi.selectorLabels" . | nindent 4 }}
-  externalTrafficPolicy: Local
+  # externalTrafficPolicy: Local
