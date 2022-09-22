@@ -88,8 +88,7 @@ dbMaxPoolSize: 5
 volumeMounts:
   mountPath: /etc/folio/edge
   name: edge-ephemeral
-  readOnly: true
 
 volumes:
   name: edge-ephemeral
-  secretName: edge-securestore-props
+  secretName: edge-ephemeral.properties

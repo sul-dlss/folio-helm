@@ -29,6 +29,10 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+          volumeMounts:
+            - name: {{ .Values.volumeMounts.name }}
+              mountPath: {{ .Values.volumeMounts.mountPath }}
+              readOnly: true
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -86,10 +90,13 @@ spec:
               value: {{ .Values.javaOptions | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          volumeMounts:
-            - mountPath: {{ .Values.volumeMounts.mountPath }}
-              name: {{ .Values.volumeMounts.name }}
-              readOnly: {{ .Values.volumeMounts.readOnly }}
+      volumes:
+        - name: {{ .Values.volume.name }}
+          secret:
+            defaultMode: 420
+            optional: true
+            secretName: {{ .Values.volume.secretName }}
+        {{- toYaml . | nindent 8 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -101,10 +108,4 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
-      volumes:
-        - name: {{ .Values.volume.name }}
-          secret:
-            defaultMode: 420
-            optional: true
-            secretName: {{ .Values.volume.secretName }}
       {{- end }}
