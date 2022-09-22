@@ -35,8 +35,13 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
+              hostPort: {{ .Values.service.hostPort }}
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
+          volumeMounts:
+            - name: edge-ephemeral
+              mountPath: "/etc/folio/edge"
+              readOnly: true
           livenessProbe:
             httpGet:
               path: /admin/health
@@ -81,11 +86,15 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: edge-ephemeral
+        secret:
+          secretName: edge-ephemeral.properties
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
