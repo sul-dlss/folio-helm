@@ -86,7 +86,6 @@ javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=80 -XX:+UseG
 dbMaxPoolSize: 5
 
 volumeMounts:
-  mountPath: /etc/folio/edge
   name: edge-ephemeral
 
 volumes:
