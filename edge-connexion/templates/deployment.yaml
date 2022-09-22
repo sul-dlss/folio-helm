@@ -38,7 +38,7 @@ spec:
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           volumeMounts:
-            - name: {{ .Values.volumeMounts.name }}
+            - name: edge-ephemeral
               mountPath: "/etc/edge"
               readOnly: true
           livenessProbe:
@@ -91,9 +91,9 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
-      - name: {{ .Values.volumes.name }}
+      - name: edge-ephemeral
         secret:
-          secretName: {{ .Values.volumes.secretName }}
+          secretName: edge-ephemeral.properties
         {{- toYaml . | nindent 8 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
