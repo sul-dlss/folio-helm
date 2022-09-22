@@ -93,9 +93,9 @@ spec:
       volumes:
         - name: {{ .Values.volumes.name }}
           secret:
+            - secretName: {{ .Values.volumes.secretName }}
             defaultMode: 420
             optional: true
-            secretName: {{ .Values.volumes.secretName }}
         {{- toYaml . | nindent 8 }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
