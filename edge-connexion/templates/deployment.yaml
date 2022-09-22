@@ -81,11 +81,15 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: {{ .Values.volumeMounts.mountPath }}
+              name: {{ .Values.volumeMounts.name }}
+              readOnly: {{ .Values.volumeMounts.readOnly }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -97,4 +101,10 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
+      volumes:
+        - name: {{ .Values.volume.name }}
+          secret:
+            defaultMode: 420
+            optional: true
+            secretName: {{ .Values.volume.secretName }}
       {{- end }}

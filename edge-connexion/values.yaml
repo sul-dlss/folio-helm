@@ -84,3 +84,12 @@ affinity: {}
 
 javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=80 -XX:+UseG1GC
 dbMaxPoolSize: 5
+
+volumeMounts:
+  mountPath: /etc/folio/edge
+  name: edge-ephemeral
+  readOnly: true
+
+volumes:
+  name: edge-ephemeral
+  secretName: edge-securestore-props
