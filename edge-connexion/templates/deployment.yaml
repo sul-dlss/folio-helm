@@ -92,7 +92,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
         - name: {{ .Values.volumes.name }}
-          secret:
+        - secret:
             - secretName: {{ .Values.volumes.secretName }}
             defaultMode: 420
             optional: true
