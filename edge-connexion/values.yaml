@@ -42,7 +42,7 @@ service:
   containerPort: 9000
 
 ingress:
-  enabled: false
+  enabled: true
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   tls:
