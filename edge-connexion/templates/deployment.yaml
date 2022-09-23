@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: edge-ephemeral
-              mountPath: "/etc/edge"
+              mountPath: "/etc/folio/edge"
               readOnly: true
           livenessProbe:
             httpGet:
