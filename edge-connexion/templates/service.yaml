@@ -11,5 +11,9 @@ spec:
       targetPort: {{ .Values.service.containerPort }}
       protocol: TCP
       name: http
+    - port: {{ .Values.service.proxyPort }}
+      targetPort: {{ .Values.service.proxyContainerPort }}
+      protocol: TCP
+      name: proxy-tcp-port
   selector:
     {{- include "edge-connexion.selectorLabels" . | nindent 4 }}
