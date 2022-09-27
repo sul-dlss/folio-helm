@@ -51,7 +51,7 @@ ingress:
       secretName: folio-edge-dev-tls
   hosts:
     - host: folio-edge-dev.stanford.edu
-      paths: ['/connexion']
+      paths: ['/']
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
