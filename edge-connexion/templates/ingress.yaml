@@ -36,13 +36,9 @@ spec:
             pathType: Prefix
             backend:
               service:
-                - name: {{ $fullName }}
-                  port:
-                    number: {{ $svcPort }}
-                - name: proxied-tcp-9000
-                  port: 9000
-                  targetPort: 9000
-                  protocol: TCP
+                name: {{ $fullName }}
+                port:
+                  number: {{ $svcPort }}
           {{- end }}
     {{- end }}
   {{- end }}
