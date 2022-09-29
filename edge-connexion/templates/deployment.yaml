@@ -34,10 +34,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http-connexion
-              hostPort: {{ .Values.service.hostPort }}
-              protocol: TCP
             - name: http
+              hostPort: {{ .Values.service.hostPort }}
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           volumeMounts:
