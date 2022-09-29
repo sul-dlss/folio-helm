@@ -11,5 +11,9 @@ spec:
       targetPort: {{ .Values.service.containerPort }}
       protocol: TCP
       name: http
+    - port: {{ .Values.service.hostPort }}
+      targetPort: {{ .Values.service.containerPort }}
+      protocol: TCP
+      name: http-connextion
   selector:
     {{- include "edge-connexion.selectorLabels" . | nindent 4 }}
