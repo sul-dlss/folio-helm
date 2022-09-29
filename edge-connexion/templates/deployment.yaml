@@ -37,6 +37,9 @@ spec:
             - name: http
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
+            - name: http-connexion
+              containerPort: {{ .Values.service.hostPort }}
+              protocol: TCP
           volumeMounts:
             - name: edge-ephemeral
               mountPath: "/etc/folio/edge"
