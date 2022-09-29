@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http-connexion
-              containerPort: {{ .Values.service.hostPort }}
+              hostPort: {{ .Values.service.hostPort }}
               protocol: TCP
             - name: http
               containerPort: {{ .Values.service.containerPort }}
