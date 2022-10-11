@@ -80,11 +80,12 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
       - name: edge-sip2
-        secret:
-          secretName: edge-sip2.conf
-      - name: edge-sip2
-        secret:
-          secretName: sip2-tenants.conf
+        projected:
+          sources:
+          - secret:
+              name: edge-sip2.conf
+          - secret:
+              name: sip2-tenants.conf
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
