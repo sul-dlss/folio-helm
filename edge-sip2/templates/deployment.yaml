@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           volumeMounts:
           - mountPath: /usr/verticles/sip2.conf
-            name: edge-sip2
+            name: sip2
             subPath: sip2.conf
           - mountPath: /usr/verticles/sip2-tenants.conf
             name: sip2-tenants
@@ -85,9 +85,9 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
-      - name: edge-sip2
+      - name: sip2
         secret:
-          secretName: edge-sip2.conf
+          secretName: sip2.conf
       - name: sip2-tenants
         secret:
           secretName: sip2-tenants.conf
