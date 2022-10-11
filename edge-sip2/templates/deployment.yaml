@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: edge-sip2
-              mountPath: "/usr/verticles"
+              mountPath: "/etc/folio/edge"
               readOnly: true
           env:
             - name: DB_DATABASE
