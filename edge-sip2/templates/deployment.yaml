@@ -37,6 +37,10 @@ spec:
             - name: http
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
+          volumeMounts:
+            - name: edge-sip2
+              mountPath: "/usr/verticles"
+              readOnly: true
           env:
             - name: DB_DATABASE
               valueFrom:
@@ -69,11 +73,18 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: edge-sip2-conf
+        secret:
+          secretName: edge-sip2.conf
+      - name: sip2-tenants-conf
+        secret:
+          secretName: sip2-tenants.conf
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
