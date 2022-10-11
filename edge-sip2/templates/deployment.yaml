@@ -42,7 +42,7 @@ spec:
               mountPath: "/etc/folio/edge"
               readOnly: true
           command: ["java -jar"]
-          args: ["edge-sip2-fat.jar -conf /etc/folio/edge/edge-sip2.conf"]
+          args: ["/usr/verticles/edge-sip2-fat.jar -conf /etc/folio/edge/edge-sip2.conf"]
           env:
             - name: DB_DATABASE
               valueFrom:
