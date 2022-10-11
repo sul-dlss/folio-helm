@@ -41,7 +41,7 @@ spec:
             - name: edge-sip2
               mountPath: "/etc/folio/edge"
               readOnly: true
-          command: ["run-java.sh"]
+          command: ["/usr/verticles/run-java.sh"]
           args: ["-conf /etc/folio/edge/edge-sip2.conf"]
           env:
             - name: DB_DATABASE
