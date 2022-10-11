@@ -37,13 +37,20 @@ spec:
             - name: http
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
+          # volumeMounts:
+          #   - name: edge-sip2
+          #     mountPath: "/etc/folio/edge"
+          #     readOnly: true
           volumeMounts:
-            - name: edge-sip2
-              mountPath: "/etc/folio/edge"
-              readOnly: true
+          - mountPath: /usr/verticles/edge-sip2.conf
+            name: edge-sip2
+            subPath: edge-sip2.conf
+          - mountPath: /usr/verticles/sip2-tenants.conf
+            name: sip2-tenants
+            subPath: sip2-tenants.conf
           args:
             - -conf
-            - /etc/folio/edge/edge-sip2.conf
+            - edge-sip2.conf
           env:
             - name: DB_DATABASE
               valueFrom:
@@ -83,12 +90,19 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
       - name: edge-sip2
-        projected:
-          sources:
-          - secret:
-              name: edge-sip2.conf
-          - secret:
-              name: sip2-tenants.conf
+        secret:
+          secretName: edge-sip2.conf
+      - name: sip2-tenants
+        secret:
+          secretName: sip2-tenants.conf
+      # volumes:
+      # - name: edge-sip2
+      #   projected:
+      #     sources:
+      #     - secret:
+      #         name: edge-sip2.conf
+      #     - secret:
+      #         name: sip2-tenants.conf
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
