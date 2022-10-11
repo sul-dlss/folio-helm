@@ -38,7 +38,7 @@ spec:
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           volumeMounts:
-          - mountPath: /usr/verticles/edge-sip2.conf
+          - mountPath: /usr/verticles/sip2.conf
             name: edge-sip2
             subPath: sip2.conf
           - mountPath: /usr/verticles/sip2-tenants.conf
