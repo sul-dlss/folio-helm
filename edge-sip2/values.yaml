@@ -50,8 +50,8 @@ ingress:
       - folio-edge-dev.stanford.edu
       secretName: folio-edge-dev-tls
   hosts:
-    - host: folio-edge-dev.stanford.edu
-      paths: ['/sip2']
+    - host: folio-sip2-dev.stanford.edu
+      paths: ['/']
 
 
 resources:
