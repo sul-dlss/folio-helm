@@ -42,17 +42,17 @@ service:
   containerPort: 8081
 
 ingress:
-  enabled: false
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  tls:
+    - hosts:
+      - folio-edge-dev.stanford.edu
+      secretName: folio-edge-dev-tls
   hosts:
-    - host: chart-example.local
-      paths: []
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+    - host: folio-edge-dev.stanford.edu
+      paths: ['/sip2']
+
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
