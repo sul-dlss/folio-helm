@@ -44,12 +44,9 @@ spec:
           - mountPath: /usr/verticles/sip2-tenants.conf
             name: sip2-tenants
             subPath: sip2-tenants.conf
-          - mountPath:
-            name: sip2-tenants
-            subPath: sip2-tenants.conf
           - mountPath: /etc/folio/edge
             name: edge-ephemeral
-            readOnly: true
+            subPath: edge-ephemeral.properties
           args:
             - -conf
             - sip2.conf
