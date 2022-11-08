@@ -94,7 +94,7 @@ spec:
       volumes:
       - name: edge-ephemeral
         secret:
-          secretName: edge-ephemeral.properties
+          secretName: edge-connexion-ephemeral.properties
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
