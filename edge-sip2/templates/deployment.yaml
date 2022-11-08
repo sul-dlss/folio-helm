@@ -95,7 +95,7 @@ spec:
           secretName: sip2-tenants.conf
       - name: edge-ephemeral
         secret:
-          secretName: edge-connexion-ephemeral.properties
+          secretName: edge-sip2-ephemeral.properties
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
