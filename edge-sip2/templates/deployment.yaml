@@ -38,15 +38,14 @@ spec:
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           volumeMounts:
+          - mountPath: /etc/folio/edge
+            name: edge-ephemeral
           - mountPath: /usr/verticles/sip2.conf
             name: sip2
             subPath: sip2.conf
           - mountPath: /usr/verticles/sip2-tenants.conf
             name: sip2-tenants
             subPath: sip2-tenants.conf
-          - mountPath: /etc/folio/edge
-            name: edge-ephemeral
-            subPath: edge-ephemeral.properties
           args:
             - -conf
             - sip2.conf
@@ -96,7 +95,7 @@ spec:
           secretName: sip2-tenants.conf
       - name: edge-ephemeral
         secret:
-          secretName: edge-sip2-ephemeral.properties
+          secretName: edge-connexion-ephemeral.properties
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
