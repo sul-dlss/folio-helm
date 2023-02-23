@@ -4,67 +4,28 @@ metadata:
   name: {{ include "okapi.fullname" . }}-hazelcast-configmap
 data:
   hazelcast.xml: |
-    <!--suppress XmlDefaultAttributeValue -->
+    <?xml version="1.0" encoding="UTF-8"?>
     <hazelcast xmlns="http://www.hazelcast.com/schema/config"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://www.hazelcast.com/schema/config
-            http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
-
-        <cluster-name>dev</cluster-name>
-
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://www.hazelcast.com/schema/config
+               http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
+        <cluster-name>cluster</cluster-name>
         <network>
             <port auto-increment="true" port-count="100">5701</port>
             <outbound-ports>
-                <!--
-                Allowed port range when connecting to other nodes.
-                0 or * means use system provided port.
-                -->
                 <ports>0</ports>
             </outbound-ports>
             <join>
-                <multicast enabled="true">
-                    <multicast-group>224.2.2.3</multicast-group>
-                    <multicast-port>54327</multicast-port>
-                </multicast>
-                <tcp-ip enabled="false">
-                    <interface>127.0.0.1</interface>
-                    <member-list>
-                        <member>127.0.0.1</member>
-                    </member-list>
-                </tcp-ip>
-                <aws enabled="false">
-                    <access-key>my-access-key</access-key>
-                    <secret-key>my-secret-key</secret-key>
-                    <!--optional, default is us-east-1 -->
-                    <region>us-west-1</region>
-                    <!--optional, default is ec2.amazonaws.com. If set, region shouldn't be set as it will override this property -->
-                    <host-header>ec2.amazonaws.com</host-header>
-                    <!-- optional, only instances belonging to this group will be discovered, default will try all running instances -->
-                    <security-group-name>hazelcast-sg</security-group-name>
-                    <tag-key>type</tag-key>
-                    <tag-value>hz-nodes</tag-value>
-                </aws>
-                <gcp enabled="false">
-                    <zones>us-east1-b,us-east1-c</zones>
-                </gcp>
-                <azure enabled="false">
-                    <client-id>CLIENT_ID</client-id>
-                    <client-secret>CLIENT_SECRET</client-secret>
-                    <tenant-id>TENANT_ID</tenant-id>
-                    <subscription-id>SUB_ID</subscription-id>
-                    <cluster-id>HZLCAST001</cluster-id>
-                    <group-name>RESOURCE-GROUP-NAME</group-name>
-                </azure>
-                <kubernetes enabled="false">
-                    <namespace>MY-KUBERNETES-NAMESPACE</namespace>
-                    <service-name>MY-SERVICE-NAME</service-name>
-                    <service-label-name>MY-SERVICE-LABEL-NAME</service-label-name>
-                    <service-label-value>MY-SERVICE-LABEL-VALUE</service-label-value>
+                <multicast enabled="false"></multicast>
+                <tcp-ip enabled="false"></tcp-ip>
+                <aws enabled="false"></aws>
+                <gcp enabled="false"></gcp>
+                <azure enabled="false"></azure>
+                <kubernetes enabled="true">
+                    <namespace>{{ .Release.Namespace }}</namespace>
+                    <service-name>{{ include "okapi.serviceAccountName" . }}</service-name>
                 </kubernetes>
-                <eureka enabled="false">
-                    <self-registration>true</self-registration>
-                    <namespace>hazelcast</namespace>
-                </eureka>
+                <eureka enabled="false"></eureka>
                 <discovery-strategies>
                 </discovery-strategies>
             </join>
@@ -75,12 +36,12 @@ data:
             <socket-interceptor enabled="false"/>
             <symmetric-encryption enabled="false">
                 <!--
-                encryption algorithm such as
-                DES/ECB/PKCS5Padding,
-                PBEWithMD5AndDES,
-                AES/CBC/PKCS5Padding,
-                Blowfish,
-                DESede
+                   encryption algorithm such as
+                   DES/ECB/PKCS5Padding,
+                   PBEWithMD5AndDES,
+                   AES/CBC/PKCS5Padding,
+                   Blowfish,
+                   DESede
                 -->
                 <algorithm>PBEWithMD5AndDES</algorithm>
                 <!-- salt value to use when generating the secret key -->
@@ -118,26 +79,22 @@ data:
                 fail-safety. 0 means no backup.
             -->
             <backup-count>1</backup-count>
-
             <!--
                 Number of async backups. 0 means no backup.
             -->
             <async-backup-count>0</async-backup-count>
-
             <empty-queue-ttl>-1</empty-queue-ttl>
-
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
         </queue>
         <map name="default">
             <!--
-            Data type that will be used for storing recordMap.
-            Possible values:
-            BINARY (default): keys and values will be stored as binary data
-            OBJECT : values will be stored in their object forms
-            NATIVE : values will be stored in non-heap region of JVM
+               Data type that will be used for storing recordMap.
+               Possible values:
+               BINARY (default): keys and values will be stored as binary data
+               OBJECT : values will be stored in their object forms
+               NATIVE : values will be stored in non-heap region of JVM
             -->
             <in-memory-format>BINARY</in-memory-format>
-
             <!--
                 Metadata creation policy for this map. Hazelcast may process objects of supported types ahead of time to
                 create additional metadata about them. This metadata then is used to make querying and indexing faster.
@@ -147,7 +104,6 @@ data:
                 OFF: No metadata is created.
             -->
             <metadata-policy>CREATE_ON_UPDATE</metadata-policy>
-
             <!--
                 Number of backups. If 1 is set as the backup-count for example,
                 then all entries of the map will be copied to another JVM for
@@ -172,7 +128,6 @@ data:
                 Any integer between 0 and Integer.MAX_VALUE. 0 means infinite. Default is 0.
             -->
             <max-idle-seconds>0</max-idle-seconds>
-
             <eviction eviction-policy="NONE" max-size-policy="PER_NODE" size="0"/>
             <!--
                 While recovering from split-brain (network partitioning),
@@ -182,7 +137,6 @@ data:
                 Values of these entries might be different for that same key.
                 Which value should be set for the key? Conflict is resolved by
                 the policy set here. Default policy is PutIfAbsentMapMergePolicy
-
                 There are built-in merge policies such as
                 com.hazelcast.spi.merge.PassThroughMergePolicy; entry will be overwritten if merging entry exists for the key.
                 com.hazelcast.spi.merge.PutIfAbsentMergePolicy ; entry will be added if the merging entry doesn't exist in the cluster.
@@ -190,47 +144,39 @@ data:
                 com.hazelcast.spi.merge.LatestUpdateMergePolicy ; entry with the latest update wins.
             -->
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
-
             <!--
-            Control caching of de-serialized values. Caching makes query evaluation faster, but it cost memory.
-            Possible Values:
+               Control caching of de-serialized values. Caching makes query evaluation faster, but it cost memory.
+               Possible Values:
                             NEVER: Never cache deserialized object
                             INDEX-ONLY: Caches values only when they are inserted into an index.
                             ALWAYS: Always cache deserialized values.
             -->
             <cache-deserialized-values>INDEX-ONLY</cache-deserialized-values>
-
         </map>
-
         <multimap name="default">
             <backup-count>1</backup-count>
             <value-collection-type>SET</value-collection-type>
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
         </multimap>
-
         <replicatedmap name="default">
             <in-memory-format>OBJECT</in-memory-format>
             <async-fillup>true</async-fillup>
             <statistics-enabled>true</statistics-enabled>
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
         </replicatedmap>
-
         <list name="default">
             <backup-count>1</backup-count>
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
         </list>
-
         <set name="default">
             <backup-count>1</backup-count>
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
         </set>
-
         <reliable-topic name="default">
             <read-batch-size>10</read-batch-size>
             <topic-overload-policy>BLOCK</topic-overload-policy>
             <statistics-enabled>true</statistics-enabled>
         </reliable-topic>
-
         <ringbuffer name="default">
             <capacity>10000</capacity>
             <backup-count>1</backup-count>
@@ -239,7 +185,6 @@ data:
             <in-memory-format>BINARY</in-memory-format>
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
         </ringbuffer>
-
         <flake-id-generator name="default">
             <prefetch-count>100</prefetch-count>
             <prefetch-validity-millis>600000</prefetch-validity-millis>
@@ -250,36 +195,29 @@ data:
             <allowed-future-millis>15000</allowed-future-millis>
             <statistics-enabled>true</statistics-enabled>
         </flake-id-generator>
-
         <serialization>
             <portable-version>0</portable-version>
         </serialization>
-
         <lite-member enabled="false"/>
-
         <cardinality-estimator name="default">
             <backup-count>1</backup-count>
             <async-backup-count>0</async-backup-count>
             <merge-policy batch-size="100">HyperLogLogMergePolicy</merge-policy>
         </cardinality-estimator>
-
         <scheduled-executor-service name="default">
             <capacity>100</capacity>
             <durability>1</durability>
             <pool-size>16</pool-size>
             <merge-policy batch-size="100">com.hazelcast.spi.merge.PutIfAbsentMergePolicy</merge-policy>
         </scheduled-executor-service>
-
         <crdt-replication>
             <replication-period-millis>1000</replication-period-millis>
             <max-concurrent-replication-targets>1</max-concurrent-replication-targets>
         </crdt-replication>
-
         <pn-counter name="default">
             <replica-count>2147483647</replica-count>
             <statistics-enabled>true</statistics-enabled>
         </pn-counter>
-
         <cp-subsystem>
             <cp-member-count>0</cp-member-count>
             <group-size>0</group-size>
@@ -297,7 +235,6 @@ data:
                 <append-request-backoff-timeout-in-millis>100</append-request-backoff-timeout-in-millis>
             </raft-algorithm>
         </cp-subsystem>
-
         <metrics enabled="true">
             <management-center enabled="true">
                 <retention-seconds>5</retention-seconds>
@@ -306,4 +243,3 @@ data:
             <collection-frequency-seconds>5</collection-frequency-seconds>
         </metrics>
     </hazelcast>
-    
