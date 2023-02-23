@@ -242,4 +242,9 @@ data:
             <jmx enabled="true"/>
             <collection-frequency-seconds>5</collection-frequency-seconds>
         </metrics>
+        <semaphore name="__vertx.*">
+            <initial-permits>1</initial-permits>
+            <backup-count>1</backup-count>
+            <async-backup-count>0</async-backup-count>
+        </semaphore>
     </hazelcast>
