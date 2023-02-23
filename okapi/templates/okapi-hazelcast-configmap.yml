@@ -8,7 +8,7 @@ data:
     <hazelcast xmlns="http://www.hazelcast.com/schema/config"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://www.hazelcast.com/schema/config
-               http://www.hazelcast.com/schema/config/hazelcast-config-4.2.xsd">
+               http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
         <cluster-name>cluster</cluster-name>
         <network>
             <port auto-increment="true" port-count="100">5701</port>
@@ -25,10 +25,7 @@ data:
                     <namespace>{{ .Release.Namespace }}</namespace>
                     <service-name>{{ include "okapi.serviceAccountName" . }}</service-name>
                 </kubernetes>
-                <eureka enabled="false">
-                    <self-registration>true</self-registration>
-                    <namespace>hazelcast</namespace>
-                </eureka>
+                <eureka enabled="false"></eureka>
                 <discovery-strategies>
                 </discovery-strategies>
             </join>
@@ -222,17 +219,17 @@ data:
             <statistics-enabled>true</statistics-enabled>
         </pn-counter>
         <cp-subsystem>
-            <cp-member-count>3</cp-member-count>
+            <cp-member-count>0</cp-member-count>
             <group-size>0</group-size>
             <session-time-to-live-seconds>300</session-time-to-live-seconds>
             <session-heartbeat-interval-seconds>5</session-heartbeat-interval-seconds>
-            <missing-cp-member-auto-removal-seconds>600</missing-cp-member-auto-removal-seconds>
+            <missing-cp-member-auto-removal-seconds>14400</missing-cp-member-auto-removal-seconds>
             <fail-on-indeterminate-operation-state>false</fail-on-indeterminate-operation-state>
             <raft-algorithm>
                 <leader-election-timeout-in-millis>2000</leader-election-timeout-in-millis>
                 <leader-heartbeat-period-in-millis>5000</leader-heartbeat-period-in-millis>
                 <max-missed-leader-heartbeat-count>5</max-missed-leader-heartbeat-count>
-                <append-request-max-entry-count>50</append-request-max-entry-count>
+                <append-request-max-entry-count>100</append-request-max-entry-count>
                 <commit-index-advance-count-to-snapshot>10000</commit-index-advance-count-to-snapshot>
                 <uncommitted-entry-count-to-reject-new-appends>100</uncommitted-entry-count-to-reject-new-appends>
                 <append-request-backoff-timeout-in-millis>100</append-request-backoff-timeout-in-millis>
