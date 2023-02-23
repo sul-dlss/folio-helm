@@ -81,7 +81,7 @@ data:
                     <group-name>RESOURCE-GROUP-NAME</group-name>
                 </azure>
                 <kubernetes enabled="true">
-                    <namespace>folio-dev</namespace>
+                    <namespace>folio-stage</namespace>
                     <service-name>okapi</service-name>
                     <!--
                     <service-label-name>MY-SERVICE-LABEL-NAME</service-label-name>
