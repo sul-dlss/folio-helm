@@ -11,7 +11,6 @@ data:
                http://www.hazelcast.com/schema/config/hazelcast-config-4.0.xsd">
         <cluster-name>cluster</cluster-name>
         <network>
-            <connection-timeout>60000</connection-timeout>
             <port auto-increment="true" port-count="100">5701</port>
             <outbound-ports>
                 <ports>0</ports>

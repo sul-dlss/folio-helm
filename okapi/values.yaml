@@ -100,6 +100,10 @@ hazelcast:
     - /hazelcast/hazelcast.xml
   javaOptions: >-
     -Dhazelcast.diagnostics.enabled=true
+    -Dhazelcast.operation.backup.timeout.millis=60000
+    -Dhazelcast.operation.call.timeout.millis=60000
+    -Dhazelcast.client.cleanup.period.millis=60000
+    -Dhazelcast.socket.connect.timeout.seconds=60
     -Dhazelcast.ip=$(OKAPI_SERVICE_HOST)
     -Dhazelcast.port=5701
     -Dnodename=$(OKAPI_POD_NAME)
