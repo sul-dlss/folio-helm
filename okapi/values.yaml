@@ -99,6 +99,7 @@ hazelcast:
     - -hazelcast-config-file
     - /hazelcast/hazelcast.xml
   javaOptions: >-
+    -Dhazelcast.diagnostics.enabled=true
     -Dhazelcast.ip=$(OKAPI_SERVICE_HOST)
     -Dhazelcast.port=5701
     -Dnodename=$(OKAPI_POD_NAME)
@@ -124,7 +125,6 @@ javaOptions: >-
   -Dlog4j2.formatMsgNoLookups=true
   -Dhost=okapi
   -Dokapiurl=http://okapi:9130
-  -Dhazelcast.diagnostics.enabled=true
 
 postJob:
   enabled: false
