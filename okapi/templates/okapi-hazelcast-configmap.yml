@@ -25,7 +25,10 @@ data:
                     <namespace>{{ .Release.Namespace }}</namespace>
                     <service-name>{{ include "okapi.serviceAccountName" . }}</service-name>
                 </kubernetes>
-                <eureka enabled="false"></eureka>
+                <eureka enabled="false">
+                    <self-registration>true</self-registration>
+                    <namespace>hazelcast</namespace>
+                </eureka>
                 <discovery-strategies>
                 </discovery-strategies>
             </join>
