@@ -124,6 +124,7 @@ javaOptions: >-
   -Dlog4j2.formatMsgNoLookups=true
   -Dhost=okapi
   -Dokapiurl=http://okapi:9130
+  -Dhazelcast.diagnostics.enabled=true
 
 postJob:
   enabled: false
