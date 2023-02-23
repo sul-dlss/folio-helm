@@ -127,6 +127,8 @@ javaOptions: >-
   -Dhazelcast.diagnostics.enabled=true
   -Dhazelcast.operation.backup.timeout.millis=60000
   -Dhazelcast.operation.call.timeout.millis=60000
+  -Dhazelcast.client.cleanup.period.millis=60000
+  -Dhazelcast.health.monitoring.delay.seconds=60
 
 postJob:
   enabled: false
