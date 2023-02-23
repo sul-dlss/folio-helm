@@ -125,6 +125,8 @@ javaOptions: >-
   -Dhost=okapi
   -Dokapiurl=http://okapi:9130
   -Dhazelcast.diagnostics.enabled=true
+  -Dhazelcast.operation.backup.timeout.millis=10000
+  -Dhazelcast.operation.call.timeout.millis=10000
 
 postJob:
   enabled: false
