@@ -110,13 +110,19 @@ hazelcast:
     --add-opens java.management/sun.management=ALL-UNNAMED
     --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
 
+# -Dhazelcast.diagnostics.enabled=true
+# -Dhazelcast.operation.backup.timeout.millis=60000
+# -Dhazelcast.operation.call.timeout.millis=60000
+# -Dhazelcast.client.cleanup.period.millis=60000
+# -Dhazelcast.socket.connect.timeout.seconds=60
+
 # Folio specific
 args: dev
 javaOptions: >-
   -Djava.awt.headless=true
   -Dstorage=postgres
-  -Dpostgres_host=$(OKAPI_HOST)
-  -Dpostgres_port=5432
+  -Dpostgres_host=$(OKAPI_DB_HOST)
+  -Dpostgres_port=$(OKAPI_DB_PORT)
   -Dpostgres_username=$(OKAPI_DB_USER)
   -Dpostgres_password=$(OKAPI_DB_PASSWORD)
   -Dpostgres_database=$(OKAPI_DB)
