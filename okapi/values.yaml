@@ -99,11 +99,6 @@ hazelcast:
     - -hazelcast-config-file
     - /hazelcast/hazelcast.xml
   javaOptions: >-
-    -Dhazelcast.diagnostics.enabled=true
-    -Dhazelcast.operation.backup.timeout.millis=60000
-    -Dhazelcast.operation.call.timeout.millis=60000
-    -Dhazelcast.client.cleanup.period.millis=60000
-    -Dhazelcast.socket.connect.timeout.seconds=60
     -Dhazelcast.ip=$(OKAPI_SERVICE_HOST)
     -Dhazelcast.port=5701
     -Dnodename=$(OKAPI_POD_NAME)
@@ -114,6 +109,12 @@ hazelcast:
     --add-opens java.base/sun.nio.ch=ALL-UNNAMED
     --add-opens java.management/sun.management=ALL-UNNAMED
     --add-opens jdk.management/com.sun.management.internal=ALL-UNNAMED
+
+# -Dhazelcast.diagnostics.enabled=true
+# -Dhazelcast.operation.backup.timeout.millis=60000
+# -Dhazelcast.operation.call.timeout.millis=60000
+# -Dhazelcast.client.cleanup.period.millis=60000
+# -Dhazelcast.socket.connect.timeout.seconds=60
 
 # Folio specific
 args: dev
