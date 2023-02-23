@@ -129,6 +129,8 @@ javaOptions: >-
   -Dhazelcast.operation.call.timeout.millis=60000
   -Dhazelcast.client.cleanup.period.millis=60000
   -Dhazelcast.health.monitoring.delay.seconds=60
+  -Dhazelcast.map.expiry.delay.seconds=60
+  -Dhazelcast.socket.connect.timeout.seconds=60
 
 postJob:
   enabled: false
