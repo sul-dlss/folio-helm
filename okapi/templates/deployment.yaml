@@ -54,6 +54,11 @@ spec:
                 secretKeyRef:
                   name: db-connect-modules
                   key: DB_HOST
+            - name: OKAPI_DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: db-connect-modules
+                  key: DB_PORT
             - name: OKAPI_DB
               valueFrom:
                 secretKeyRef:
