@@ -131,7 +131,7 @@ spec:
                   key: AWS_SECRET_ACCESS_KEY
                   name: s3-credentials
             - name:  LOCAL_FS_COMPOSE_WITH_AWS_SDK
-              value: true
+              value: "true"
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
