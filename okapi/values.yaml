@@ -124,6 +124,7 @@ javaOptions: >-
   -Dlog4j2.formatMsgNoLookups=true
   -Dhost=okapi
   -Dokapiurl=http://okapi:9130
+  -Dlog4j2.debug=true
 
 postJob:
   enabled: false
