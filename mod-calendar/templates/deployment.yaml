@@ -56,7 +56,7 @@ spec:
             failureThreshold: 20
             periodSeconds: 120
             timeoutSeconds: 60
-            initialDelaySeconds: 720
+            initialDelaySeconds: 900
           env:
             - name: DB_DATABASE
               valueFrom:
