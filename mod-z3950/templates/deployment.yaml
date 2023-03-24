@@ -37,7 +37,25 @@ spec:
             - name: http
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
+          volumeMounts:
+            - name: zserver-config
+              mountPath: /usr/src/app/etc
           env:
+            - name: OKAPI_URL
+              valueFrom:
+                secretKeyRef:
+                  key: OKAPI_URL
+                  name: db-connect-modules
+            - name: ZSERVER_USER
+              valueFrom:
+                secretKeyRef:
+                  key: ZSERVER_USER
+                  name: db-connect-modules
+            - name: ZSERVER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: ZSERVER_PASSWORD
+                  name: db-connect-modules
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
@@ -69,11 +87,15 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: zserver-config
+        secret:
+          secretName: zserver.conf
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
