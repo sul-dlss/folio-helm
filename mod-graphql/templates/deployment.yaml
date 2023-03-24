@@ -38,6 +38,16 @@ spec:
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           env:
+            - name: OKAPI_URL
+              valueFrom:
+                secretKeyRef:
+                  key: OKAPI_URL
+                  name: db-connect-modules
+            - name: OKAPI_TENANT
+              valueFrom:
+                secretKeyRef:
+                  key: TENANT_ID
+                  name: db-connect-modules
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
@@ -69,7 +79,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:

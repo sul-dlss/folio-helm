@@ -32,12 +32,37 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          command: ["perl"]
+          args: ["-I", "lib", "bin/z2folio", "-c", "etc/config", "--", "-f", "etc/yazgfs.xml", "-v-session"]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
+          volumeMounts:
+            - name: zserver-config
+              mountPath: /usr/src/app/etc/config.sul.json
+              subPath: config.sul.json
+          lifecycle:
+            postStart:
+              exec:
+                command: ["cp", "/usr/src/app/etc/config.sul.json", "/usr/src/app/etc/config.Default.json"]
           env:
+            - name: OKAPI_URL
+              valueFrom:
+                secretKeyRef:
+                  key: OKAPI_URL
+                  name: db-connect-modules
+            - name: FOLIO_USER
+              valueFrom:
+                secretKeyRef:
+                  key: OKAPI_READONLY_APP_USER
+                  name: db-connect-modules
+            - name: FOLIO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: OKAPI_READONLY_APP_PASSWORD
+                  name: db-connect-modules
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
@@ -69,11 +94,15 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: zserver-config
+        secret:
+          secretName: zserver.conf
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
