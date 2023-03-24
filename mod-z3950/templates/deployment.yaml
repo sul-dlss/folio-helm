@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: zserver-config
-              mountPath: /usr/src/app/etc/config.json
+              mountPath: /usr/src/app/etc/
               subPath: config.json
           env:
             - name: OKAPI_URL
