@@ -47,12 +47,12 @@ spec:
                 secretKeyRef:
                   key: OKAPI_URL
                   name: db-connect-modules
-            - name: ZSERVER_USER
+            - name: FOLIO_USER
               valueFrom:
                 secretKeyRef:
                   key: ZSERVER_USER
                   name: db-connect-modules
-            - name: ZSERVER_PASSWORD
+            - name: FOLIO_PASSWORD
               valueFrom:
                 secretKeyRef:
                   key: ZSERVER_PASSWORD
