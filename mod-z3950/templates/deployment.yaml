@@ -41,8 +41,10 @@ spec:
             - name: zserver-config
               mountPath: /usr/src/app/etc/config.sul.json
               subPath: config.sul.json
-          command: ["cp"]
-          args: ["/usr/src/app/etc/config.sul.json", "/usr/src/app/etc/config.Default.json"]
+          lifecycle:
+            postStart:
+              exec:
+                command: ["cp", "/usr/src/app/etc/config.sul.json", "/usr/src/app/etc/config.Default.json"]
           env:
             - name: OKAPI_URL
               valueFrom:
