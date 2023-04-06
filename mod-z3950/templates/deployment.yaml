@@ -43,10 +43,10 @@ spec:
             - name: zserver-config
               mountPath: /usr/src/app/etc/config.sul.json
               subPath: config.sul.json
-          # lifecycle:
-          #   postStart:
-          #     exec:
-          #       command: ["cp", "/usr/src/app/etc/config.sul.json", "/usr/src/app/etc/config.Default.json"]
+          lifecycle:
+            postStart:
+              exec:
+                command: ["cp", "/usr/src/app/etc/config.sul.json", "/usr/src/app/etc/config.Default.json"]
           env:
             - name: OKAPI_URL
               valueFrom:
@@ -56,12 +56,12 @@ spec:
             - name: FOLIO_USER
               valueFrom:
                 secretKeyRef:
-                  key: ZSERVER_USER
+                  key: OKAPI_READONLY_APP_USER
                   name: db-connect-modules
             - name: FOLIO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: ZSERVER_PASSWORD
+                  key: OKAPI_READONLY_APP_PASSWORD
                   name: db-connect-modules
             - name: DB_DATABASE
               valueFrom:
