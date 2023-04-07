@@ -1,6 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "setea-api.fullname" . -}}
 {{- $hostNamespace := printf "%s-%s-%s" "folio" $fullName ".stanford.edu" -}}
+{{- $tlsSecretNamespace := printf "%s-%s-%s" "folio" $fullName "tls" -}}
 {{- $svcPort := .Values.service.port -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
@@ -29,13 +30,8 @@ spec:
   {{- end }}
   {{- if .Values.ingress.tls }}
   tls:
-    {{- range .Values.ingress.tls }}
     host: {{ $hostNamespace | quote }}
-    # - hosts:
-    #     {{- range .hosts }}
-    #     - {{ . | quote }}
-    #     {{- end }}
-      secretName: {{ .secretName }}
+    secretName: {{ .tlsSecretNamespace | quote }}
     {{- end }}
   {{- end }}
   rules:
