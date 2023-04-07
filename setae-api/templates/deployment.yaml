@@ -38,6 +38,11 @@ spec:
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           env:
+              # The base image by default will use the number of available cores to create the worker processes.
+              # This will be a very high number by default when deployed in the cluster!
+              # See '/gunicorn_conf.py' on base image: tiangolo/uvicorn-gunicorn-fastapi:python3.8
+            - name: WORKERS_PER_CORE
+              value: ".05"
             - name: OKAPI_URL
               valueFrom:
                 secretKeyRef:
