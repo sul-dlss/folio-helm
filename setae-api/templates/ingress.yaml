@@ -29,7 +29,8 @@ spec:
   {{- if .Values.ingress.tls }}
   tls:
     {{- range .Values.ingress.tls }}
-    host: {{ $HOST }}
+    {{-  $hostNamespace := printf "%s-%s" "folio" $fullName ".stanford.edu" -}}
+    host: {{ $hostNamespace }}
     # - hosts:
     #     {{- range .hosts }}
     #     - {{ . | quote }}
