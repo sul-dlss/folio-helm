@@ -28,16 +28,17 @@ spec:
   {{- end }}
   {{- if .Values.ingress.tls }}
   tls:
-    {{- $hostNamespace := printf "folio-%s.stanford.edu" (include "setae-api.fullname" .) -}}
-    {{- $tlsSecretNamespace := printf "folio-%s-tls" (include "setae-api.fullname" .) -}}
-    host: {{ $hostNamespace | quote }}
-    secretName: {{ .tlsSecretNamespace | quote }}
+    {{- range .Values.ingress.tls }}
+    - hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+      secretName: {{ .secretName }}
     {{- end }}
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    {{- $hostNamespace := printf "folio-%s.stanford.edu" (include "setae-api.fullname" .) -}}
-    - host: {{ $hostNamespace | quote }}
+    - host: {{ .host | quote }}
       http:
         paths:
           {{- range .paths }}
