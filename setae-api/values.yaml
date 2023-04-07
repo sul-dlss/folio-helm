@@ -7,7 +7,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "setea-api"
+fullnameOverride: "setae-api"
 
 serviceAccount:
   # Specifies whether a service account should be created

@@ -1,8 +1,8 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "setea-api.fullname" . -}}
+{{- $fullName := include "setae-api.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
-{{- $hostNamespace := printf "folio-%s.stanford.edu" (include "setea-api.fullname" .) -}}
-{{- $tlsSecretNamespace := printf "folio-%s-tls" (include "setea-api.fullname" .) -}}
+{{- $hostNamespace := printf "folio-%s.stanford.edu" (include "setae-api.fullname" .) -}}
+{{- $tlsSecretNamespace := printf "folio-%s-tls" (include "setae-api.fullname" .) -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
   {{- $_ := set .Values.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className}}
@@ -19,7 +19,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "setea-api.labels" . | nindent 4 }}
+    {{- include "setae-api.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
