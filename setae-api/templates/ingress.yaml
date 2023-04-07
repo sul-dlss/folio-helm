@@ -1,8 +1,8 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "setea-api.fullname" . -}}
-{{- $hostNamespace := printf "%s-%s-%s" "folio" $fullName ".stanford.edu" -}}
-{{- $tlsSecretNamespace := printf "%s-%s-%s" "folio" $fullName "tls" -}}
 {{- $svcPort := .Values.service.port -}}
+{{- $hostNamespace := printf "folio-%s.stanford.edu" (include "setea-api.fullname" .) -}}
+{{- $tlsSecretNamespace := printf "folio-%s-tls" (include "setea-api.fullname" .) -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
   {{- $_ := set .Values.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className}}
