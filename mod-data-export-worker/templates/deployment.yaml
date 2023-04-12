@@ -108,7 +108,7 @@ spec:
             - name: LOCAL_FS_URL
               valueFrom:
                 secretKeyRef:
-                  key: LOCAL_FS_URL
+                  key: AWS_URL
                   name: s3-credentials
             - name: LOCAL_FS_REGION
               valueFrom:
