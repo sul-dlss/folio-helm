@@ -101,10 +101,11 @@ spec:
                   key: AWS_SECRET_ACCESS_KEY
                   name: s3-credentials
             - name: AWS_BUCKET
-              valueFrom:
-                secretKeyRef:
-                  key: AWS_BUCKET
-                  name: s3-credentials
+              value: "."
+              # valueFrom:
+              #   secretKeyRef:
+              #     key: AWS_BUCKET
+              #     name: s3-credentials
             - name: LOCAL_FS_URL
               valueFrom:
                 secretKeyRef:
