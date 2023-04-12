@@ -38,6 +38,8 @@ spec:
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           env:
+            - name: REPLICATION_FACTOR
+              value: "3"
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
