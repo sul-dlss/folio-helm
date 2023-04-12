@@ -40,6 +40,8 @@ spec:
           env:
             - name: KAFKA_CONSUMER_MAX_POLL_RECORDS
               value: {{ .Values.maxPollRecords | quote }}
+            - name: KAFKA_EVENTS_CONCURRENCY
+              value: {{ .Values.eventsConcurrency | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
