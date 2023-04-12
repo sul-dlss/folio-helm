@@ -39,9 +39,9 @@ spec:
               protocol: TCP
           env:
             - name: KAFKA_CONSUMER_MAX_POLL_RECORDS
-              value: "1000"
+              value: {{ .Values.maxPollRecords | quote }}
             - name: KAFKA_EVENTS_CONCURRENCY
-              value: "3"
+              value: {{ .Values.eventsConcurrency | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
