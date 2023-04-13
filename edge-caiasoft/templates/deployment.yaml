@@ -38,8 +38,8 @@ spec:
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
           volumeMounts:
-            - name: secure-store-props
-              mountPath: "/etc/edge"
+            - name: edge-ephemeral
+              mountPath: "/etc/folio/edge"
               readOnly: true
           env:
             - name: DB_DATABASE
@@ -73,15 +73,15 @@ spec:
               valueFrom:
                 secretKeyRef:
                   key: ENV
-                  name: db-connect-modules      
+                  name: db-connect-modules
             - name: JAVA_OPTIONS
               value: {{ .Values.javaOptions | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
-      - name: secure-store-props
+      - name: edge-ephemeral
         secret:
-          secretName: ephemeral-properties
+          secretName: edge-caiasoft-ephemeral.properties
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
