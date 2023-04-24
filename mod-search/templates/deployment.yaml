@@ -42,6 +42,8 @@ spec:
               value: {{ .Values.maxPollRecords | quote }}
             - name: KAFKA_EVENTS_CONCURRENCY
               value: {{ .Values.eventsConcurrency | quote }}
+            - name: KAFKA_CONTRIBUTOR_CONCURRENCY
+              value: {{ .Values.contributorConcurrency | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
