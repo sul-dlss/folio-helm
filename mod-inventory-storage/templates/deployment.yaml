@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           env:
             - name: REPLICATION_FACTOR
-              value: "3"
+              value: {{ .Values.replicaCount | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
