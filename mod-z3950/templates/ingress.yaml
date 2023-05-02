@@ -39,6 +39,7 @@ spec:
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
+      {{- $host := .host -}}
     - host: {{ .host | quote }}
       http:
         paths:
@@ -49,18 +50,11 @@ spec:
               service:
                 name: {{ $fullName }}
                 port:
+                  {{- if regexMatch "zserver" $host -}}
+                  number: {{ $zserverPort }}
+                  {{- else if regexMatch "sru" $host -}}
                   number: {{ $sruPort }}
-          {{- end }}
-      z3950:
-        paths:
-          {{- range .paths }}
-          - path: {{ . }}
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ $fullName }}
-                port:
-                  number: {{ $sruPort }}
+                  {{- end }}
           {{- end }}
     {{- end }}
 {{- end }}
