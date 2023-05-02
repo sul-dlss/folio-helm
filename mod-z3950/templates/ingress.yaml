@@ -1,6 +1,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "mod-z3950.fullname" . -}}
-{{- $svcPort := .Values.service.port -}}
+{{- $zserverPort := .Values.zserver.port -}}
+{{- $sruPort := .Values.sru.port -}}
 {{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
   {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
   {{- $_ := set .Values.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className}}
@@ -48,7 +49,18 @@ spec:
               service:
                 name: {{ $fullName }}
                 port:
-                  number: {{ $svcPort }}
+                  number: {{ $sruPort }}
+          {{- end }}
+      z3950:
+        paths:
+          {{- range .paths }}
+          - path: {{ . }}
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $fullName }}
+                port:
+                  number: {{ $sruPort }}
           {{- end }}
     {{- end }}
 {{- end }}
