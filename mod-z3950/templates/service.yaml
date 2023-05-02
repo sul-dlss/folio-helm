@@ -10,7 +10,7 @@ spec:
     - port: {{ .Values.zserver.port }}
       targetPort: {{ .Values.service.containerPort }}
       protocol: TCP
-      name: http
+      name: z3950
     - port: {{ .Values.sru.port }}
       targetPort: {{ .Values.service.containerPort }}
       protocol: TCP
