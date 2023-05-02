@@ -7,7 +7,11 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.zserver.port }}
+      targetPort: {{ .Values.service.containerPort }}
+      protocol: TCP
+      name: http
+    - port: {{ .Values.sru.port }}
       targetPort: {{ .Values.service.containerPort }}
       protocol: TCP
       name: http
