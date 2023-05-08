@@ -37,6 +37,14 @@ spec:
             - name: http
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: {{ if .Values.livenessProbe -}} {{ default "/admin/health" .Values.livenessProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
+              port: {{ .Values.service.containerPort }}
+            periodSeconds: {{ if .Values.livenessProbe -}} {{ default 90 .Values.livenessProbe.periodSeconds }} {{- else -}} 90 {{- end }}
+            initialDelaySeconds: {{ if .Values.initialDelaySeconds -}} {{ default 5 .Values.livenessProbe.initialDelaySeconds }} {{- else -}} 5 {{- end }}
+            timeoutSeconds: {{ if .Values.livenessProbe -}} {{ default 30 .Values.livenessProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
+          {{- end }}
           env:
           - name: OKAPI_SERVICE_PORT
             valueFrom:
@@ -77,7 +85,7 @@ spec:
             valueFrom:
               secretKeyRef:
                 key: ENV
-                name: db-connect-modules      
+                name: db-connect-modules
           - name: JAVA_OPTIONS
             value: {{ .Values.javaOptions | quote }}
           resources:

@@ -47,6 +47,14 @@ spec:
             postStart:
               exec:
                 command: ["cp", "/usr/src/app/etc/config.sul.json", "/usr/src/app/etc/config.Default.json"]
+          livenessProbe:
+            httpGet:
+              path: {{ if .Values.livenessProbe -}} {{ default "/admin/health" .Values.livenessProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
+              port: {{ .Values.service.containerPort }}
+            periodSeconds: {{ if .Values.livenessProbe -}} {{ default 90 .Values.livenessProbe.periodSeconds }} {{- else -}} 90 {{- end }}
+            initialDelaySeconds: {{ if .Values.initialDelaySeconds -}} {{ default 5 .Values.livenessProbe.initialDelaySeconds }} {{- else -}} 5 {{- end }}
+            timeoutSeconds: {{ if .Values.livenessProbe -}} {{ default 30 .Values.livenessProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
+          {{- end }}
           env:
             - name: OKAPI_URL
               valueFrom:
