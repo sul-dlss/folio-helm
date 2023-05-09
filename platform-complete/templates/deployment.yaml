@@ -37,7 +37,8 @@ spec:
             - name: http
               containerPort: {{ .Values.service.containerPort }}
               protocol: TCP
-           {{- if eq .Values.livenessProbeEnabled true }}
+           {{- if .Values.livenessProbeEnabled}}
+          {{- if eq .Values.livenessProbeEnabled true }}
           livenessProbe:
             httpGet:
               path: {{ if .Values.livenessProbe -}} {{ default "/admin/health" .Values.livenessProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
