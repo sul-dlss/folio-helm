@@ -47,6 +47,7 @@ spec:
             initialDelaySeconds: {{ if .Values.initialDelaySeconds -}} {{ default 5 .Values.livenessProbe.initialDelaySeconds }} {{- else -}} 5 {{- end }}
             timeoutSeconds: {{ if .Values.livenessProbe -}} {{ default 30 .Values.livenessProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
           {{- end }}
+          {{- end }}
           readinessProbe:
             tcpSocket:
               port: {{ .Values.service.containerPort }}
