@@ -46,7 +46,9 @@ spec:
             periodSeconds: {{ if .Values.livenessProbe -}} {{ default 90 .Values.livenessProbe.periodSeconds }} {{- else -}} 90 {{- end }}
             initialDelaySeconds: {{ if .Values.initialDelaySeconds -}} {{ default 5 .Values.livenessProbe.initialDelaySeconds }} {{- else -}} 5 {{- end }}
             timeoutSeconds: {{ if .Values.livenessProbe -}} {{ default 30 .Values.livenessProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
-          {{- end }}env:
+          {{- end }}
+          {{- end }}
+          env:
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
