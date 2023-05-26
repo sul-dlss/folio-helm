@@ -66,6 +66,8 @@ resources:
     #cpu: 500m
     memory: 400Mi
 
+livenessProbeEnabled: false
+
 autoscaling:
   enabled: false
   minReplicas: 1
