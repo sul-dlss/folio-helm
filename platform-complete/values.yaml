@@ -66,6 +66,11 @@ resources:
     #cpu: 500m
     memory: 400Mi
 
+livenessProbe:
+  path: '/_/proxy/health'
+  periodSeconds: 200
+  timeoutSeconds: 5
+  
 autoscaling:
   enabled: false
   minReplicas: 1
