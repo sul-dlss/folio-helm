@@ -49,6 +49,11 @@ spec:
           {{- end }}
           {{- end }}
           env:
+            - name: TENANT_ID
+              valueFrom:
+                secretKeyRef:
+                  key: TENANT_ID
+                  name: db-connect-modules
             - name: OKAPI_URL
               valueFrom:
                 secretKeyRef:
