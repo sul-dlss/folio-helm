@@ -48,6 +48,28 @@ spec:
               port: {{ .Values.service.containerPort }}
             periodSeconds: 60
             timeoutSeconds: 5
+          {{- if .Values.readinessProbeEnabled}}
+          {{- if eq .Values.readinessProbeEnabled true }}
+          readinessProbe:
+            httpGet:
+              path: {{ if .Values.readinessProbe -}} {{ default "/admin/health" .Values.readinessProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
+              port: {{ .Values.service.containerPort }}
+            periodSeconds: {{ if .Values.readinessProbe -}} {{ default 90 .Values.readinessProbe.periodSeconds }} {{- else -}} 90 {{- end }}
+            initialDelaySeconds: {{ if .Values.initialDelaySeconds -}} {{ default 5 .Values.readinessProbe.initialDelaySeconds }} {{- else -}} 5 {{- end }}
+            timeoutSeconds: {{ if .Values.readinessProbe -}} {{ default 30 .Values.readinessProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.startupProbeEnabled}}
+          {{- if eq .Values.startupProbeEnabled true }}
+          startupProbe:
+            httpGet:
+              path: {{ if .Values.startupProbe -}} {{ default "/admin/health" .Values.startupProbe.path | quote }} {{- else -}} "/admin/health" {{- end }}
+              port: {{ .Values.service.containerPort }}
+            periodSeconds: {{ if .Values.startupProbe -}} {{ default 90 .Values.startupProbe.periodSeconds }} {{- else -}} 90 {{- end }}
+            initialDelaySeconds: {{ if .Values.initialDelaySeconds -}} {{ default 5 .Values.startupProbe.initialDelaySeconds }} {{- else -}} 5 {{- end }}
+            timeoutSeconds: {{ if .Values.startupProbe -}} {{ default 30 .Values.startupProbe.timeoutSeconds }} {{- else -}} 30 {{- end }}
+          {{- end }}
+          {{- end }}
           {{- if .Values.livenessProbeEnabled}}
           {{- if eq .Values.livenessProbeEnabled true }}
           livenessProbe:
