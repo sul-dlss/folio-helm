@@ -125,6 +125,29 @@ javaOptions: >-
   -Dhost=okapi
   -Dokapiurl=http://okapi:9130
 
+startupProbe:
+  path: '/admin/health'
+  periodSeconds: 90
+  timeoutSeconds: 30
+  initialDelaySeconds: 5
+  failureThreshold: 30
+livenessProbe:
+  path: '/admin/health'
+  periodSeconds: 90
+  timeoutSeconds: 30
+  initialDelaySeconds: 5
+  failureThreshold: 30
+readinessProbe:
+  path: '/admin/health'
+  periodSeconds: 90
+  timeoutSeconds: 30
+  initialDelaySeconds: 5
+  failureThreshold: 30
+
+startupProbeEnabled : true
+livenessProbeEnabled : true
+readinessProbeEnabled : true
+
 postJob:
   enabled: false
   okapiUrl: http://okapi:9130
