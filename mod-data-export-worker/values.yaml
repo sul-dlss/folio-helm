@@ -83,6 +83,29 @@ affinity: {}
 javaOptions: -Dlog4j2.formatMsgNoLookups=true -XX:MetaspaceSize=384m -XX:MaxMetaspaceSize=512m  -Xmx2048m -XX:MaxRAMPercentage=80 -XX:+UseG1GC
 dbMaxPoolSize: 10
 
+startupProbe:
+  path: '/admin/health'
+  periodSeconds: 90
+  timeoutSeconds: 30
+  initialDelaySeconds: 5
+  failureThreshold: 30
+livenessProbe:
+  path: '/admin/health'
+  periodSeconds: 90
+  timeoutSeconds: 30
+  initialDelaySeconds: 5
+  failureThreshold: 30
+readinessProbe:
+  path: '/admin/health'
+  periodSeconds: 90
+  timeoutSeconds: 30
+  initialDelaySeconds: 5
+  failureThreshold: 30
+
+startupProbeEnabled : true
+livenessProbeEnabled : true
+readinessProbeEnabled : true
+
 postJob:
   enabled: false
   okapiUrl: http://okapi:9130
