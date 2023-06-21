@@ -84,22 +84,20 @@ affinity: {}
 # Folio specific
 startupProbe:
   path: '/admin/health'
-  periodSeconds: 90
-  timeoutSeconds: 30
+  periodSeconds: 5
+  timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 30
+  failureThreshold: 300
 livenessProbe:
   path: '/admin/health'
-  periodSeconds: 90
-  timeoutSeconds: 30
+  periodSeconds: 5
+  timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 30
 readinessProbe:
   path: '/admin/health'
-  periodSeconds: 90
-  timeoutSeconds: 30
+  periodSeconds: 5
+  timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 30
 
 startupProbeEnabled : false
 livenessProbeEnabled : false
