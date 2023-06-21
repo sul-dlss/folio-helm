@@ -86,22 +86,22 @@ dbMaxPoolSize: 10
 
 startupProbe:
   path: '/admin/health'
-  periodSeconds: 90
-  timeoutSeconds: 30
+  periodSeconds: 5
+  timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 30
+  failureThreshold: 100
 livenessProbe:
   path: '/admin/health'
-  periodSeconds: 90
-  timeoutSeconds: 30
+  periodSeconds: 5
+  timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 30
+  failureThreshold: 100
 readinessProbe:
   path: '/admin/health'
-  periodSeconds: 90
-  timeoutSeconds: 30
+  periodSeconds: 5
+  timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 30
+  failureThreshold: 100
 
 startupProbeEnabled : false
 livenessProbeEnabled : false
