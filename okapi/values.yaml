@@ -144,9 +144,9 @@ readinessProbe:
   initialDelaySeconds: 5
   failureThreshold: 30
 
-startupProbeEnabled : true
-livenessProbeEnabled : true
-readinessProbeEnabled : true
+startupProbeEnabled : false
+livenessProbeEnabled : false
+readinessProbeEnabled : false
 
 postJob:
   enabled: false
