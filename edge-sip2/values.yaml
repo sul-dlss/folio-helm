@@ -99,7 +99,7 @@ readinessProbe:
   timeoutSeconds: 5
   initialDelaySeconds: 5
 
-healthCheckPort: 8081
+healthCheckPort: 8080
 startupProbeEnabled : false
 livenessProbeEnabled : false
 readinessProbeEnabled : false
