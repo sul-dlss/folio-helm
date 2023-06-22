@@ -88,19 +88,17 @@ startupProbe:
   periodSeconds: 5
   timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 100
+  failureThreshold: 300
 livenessProbe:
   path: '/admin/health'
   periodSeconds: 5
   timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 100
 readinessProbe:
   path: '/admin/health'
   periodSeconds: 5
   timeoutSeconds: 5
   initialDelaySeconds: 5
-  failureThreshold: 100
 
 startupProbeEnabled : false
 livenessProbeEnabled : false
