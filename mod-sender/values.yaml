@@ -84,18 +84,18 @@ javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=80 -XX:+UseG
 dbMaxPoolSize: 10
 
 startupProbe:
-  path: '/admin/health'
+  path: '/apidocs/'
   periodSeconds: 5
   timeoutSeconds: 5
   initialDelaySeconds: 5
   failureThreshold: 300
 livenessProbe:
-  path: '/admin/health'
+  path: '/apidocs/'
   periodSeconds: 5
   timeoutSeconds: 5
   initialDelaySeconds: 5
 readinessProbe:
-  path: '/admin/health'
+  path: '/apidocs/'
   periodSeconds: 5
   timeoutSeconds: 5
   initialDelaySeconds: 5
