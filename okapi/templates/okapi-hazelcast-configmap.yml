@@ -303,7 +303,7 @@ data:
         </pn-counter>
 
         <cp-subsystem>
-            <cp-member-count>3</cp-member-count>
+            <cp-member-count>{{ .Values.replicaCount }}</cp-member-count>
             <group-size>0</group-size>
             <session-time-to-live-seconds>300</session-time-to-live-seconds>
             <session-heartbeat-interval-seconds>5</session-heartbeat-interval-seconds>
