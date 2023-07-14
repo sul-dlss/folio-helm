@@ -83,7 +83,7 @@ tolerations: []
 affinity: {}
 
 # Folio specific
-javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=80 -XX:+UseG1GC
+javaOptions: -Dlog4j2.formatMsgNoLookups=true   -XX:MaxRAMPercentage=80 -XX:MinRAMPercentage=80 -XX:+UseG1GC
 dbMaxPoolSize: 10
 
 startupProbe:
