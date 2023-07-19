@@ -39,7 +39,7 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
-  containerPort: 8081  
+  containerPort: 8081
 
 ingress:
   enabled: false
@@ -80,6 +80,27 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+startupProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+  failureThreshold: 300
+livenessProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+readinessProbe:
+  path: '/admin/health'
+  periodSeconds: 5
+  timeoutSeconds: 5
+  initialDelaySeconds: 5
+
+startupProbeEnabled : false
+livenessProbeEnabled : false
+readinessProbeEnabled : false
 
 postJob:
   enabled: false
