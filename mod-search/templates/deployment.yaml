@@ -79,6 +79,8 @@ spec:
               value: {{ .Values.eventsConcurrency | quote }}
             - name: KAFKA_CONTRIBUTOR_CONCURRENCY
               value: {{ .Values.contributorConcurrency | quote }}
+            - name: INITIAL_LANGUAGES
+              value: {{ .Values.initialLanguages | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
