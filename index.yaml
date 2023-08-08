@@ -3,7 +3,7 @@ entries:
   edge-caiasoft:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.868856-07:00"
+    created: "2023-08-08T16:13:08.440616-07:00"
     description: A Helm chart for Kubernetes
     digest: ddb404997212e4a067072166553deedb78d6cf35a69b7ce9a169315ec89014a0
     name: edge-caiasoft
@@ -14,7 +14,7 @@ entries:
   edge-connexion:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.869712-07:00"
+    created: "2023-08-08T16:13:08.442247-07:00"
     description: A Helm chart for Kubernetes
     digest: 8fae166532d26f9c1419abca49e29e3cf0688cb41b39158a93d70e0d87fc45be
     name: edge-connexion
@@ -25,7 +25,7 @@ entries:
   edge-dematic:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.870619-07:00"
+    created: "2023-08-08T16:13:08.443618-07:00"
     description: A Helm chart for Kubernetes
     digest: 8a9e0f524b7fbd9cc3e70462a73ffe1be3cacbdbcca0c895f71337ab636789eb
     name: edge-dematic
@@ -36,7 +36,7 @@ entries:
   edge-ea-data-export:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.871363-07:00"
+    created: "2023-08-08T16:13:08.444928-07:00"
     description: A Helm chart for Kubernetes
     digest: 8e881ac2b7d6c1004962fe1b5cc04b54779c224e954e430db74aa97ab84b9903
     name: edge-ea-data-export
@@ -47,7 +47,7 @@ entries:
   edge-inn-reach:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.872283-07:00"
+    created: "2023-08-08T16:13:08.446497-07:00"
     description: A Helm chart for Kubernetes
     digest: 917030ff1218dfc5252bbb968c421bef0f3e762d430b927a7f7e9aacd82d97b6
     name: edge-inn-reach
@@ -58,7 +58,7 @@ entries:
   edge-ncip:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.873148-07:00"
+    created: "2023-08-08T16:13:08.448163-07:00"
     description: A Helm chart for Kubernetes
     digest: 671e12e163c249247836b89def9ac928104530d705f868e109523334ea63fb3f
     name: edge-ncip
@@ -69,7 +69,7 @@ entries:
   edge-oai-pmh:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.873924-07:00"
+    created: "2023-08-08T16:13:08.449473-07:00"
     description: A Helm chart for Kubernetes
     digest: 1195c95f6ca381265138d76d8a610fd892a07af5b1cb4cbae0c8a19a814645c6
     name: edge-oai-pmh
@@ -80,7 +80,7 @@ entries:
   edge-orders:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.874611-07:00"
+    created: "2023-08-08T16:13:08.450793-07:00"
     description: A Helm chart for Kubernetes
     digest: 615819b503515d8f2042bb037551754858fa7d680b9b87e966ac7a7df1a0cabd
     name: edge-orders
@@ -91,7 +91,7 @@ entries:
   edge-patron:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.87529-07:00"
+    created: "2023-08-08T16:13:08.453578-07:00"
     description: A Helm chart for Kubernetes
     digest: 6916d701779213cbb003d61478123f04dbafdbd8e520a55f478572eb9818d74a
     name: edge-patron
@@ -102,7 +102,7 @@ entries:
   edge-rtac:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.876008-07:00"
+    created: "2023-08-08T16:13:08.455457-07:00"
     description: A Helm chart for Kubernetes
     digest: 33b911ce7557feebb87052e12201e841191db5a109b6914a7a87710d8641f5c5
     name: edge-rtac
@@ -113,7 +113,7 @@ entries:
   edge-sftp:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.876645-07:00"
+    created: "2023-08-08T16:13:08.457658-07:00"
     description: A Helm chart for Kubernetes
     digest: 7a6421d2a4e20c26b7322d09d6e67a1467213d260b3fdc4134823c9c1ecb7869
     name: edge-sftp
@@ -124,7 +124,7 @@ entries:
   edge-sip2:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.878155-07:00"
+    created: "2023-08-08T16:13:08.459332-07:00"
     description: A Helm chart for Kubernetes
     digest: 1b6e10bb7aa6af0633aec84f3f335a5bd105811a099df35751474515d109e4e5
     name: edge-sip2
@@ -135,7 +135,7 @@ entries:
   mod-aes:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.878875-07:00"
+    created: "2023-08-08T16:13:08.460845-07:00"
     description: A Helm chart for Kubernetes
     digest: 36df9452bc2f83aa1a1eca4b8ff834c6e3d52e82b64e9e367785e77289ae1ecc
     name: mod-aes
@@ -146,7 +146,7 @@ entries:
   mod-agreements:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.879592-07:00"
+    created: "2023-08-08T16:13:08.462395-07:00"
     description: A Helm chart for Kubernetes
     digest: cad46d0342bd19d6ec054a1b9bc4e1cd9aa34e310d7ff56724b3ff3e0312985c
     name: mod-agreements
@@ -157,7 +157,7 @@ entries:
   mod-audit:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.880331-07:00"
+    created: "2023-08-08T16:13:08.463911-07:00"
     description: A Helm chart for Kubernetes
     digest: 5fdfd19ec1c636b4f301da6a3c41a1c3aa2ef7a62d4841e448f09f8423329925
     name: mod-audit
@@ -168,7 +168,7 @@ entries:
   mod-authtoken:
   - apiVersion: v1
     appVersion: 2.5.0
-    created: "2023-07-26T10:55:39.881065-07:00"
+    created: "2023-08-08T16:13:08.465391-07:00"
     description: A Helm chart for Folio mod-authtoken
     digest: 75e877a34cc87fe47016eb72be708c927e424a4d8b76b9074f51f03bb2812951
     name: mod-authtoken
@@ -179,7 +179,7 @@ entries:
   mod-calendar:
   - apiVersion: v1
     appVersion: 5.4.0
-    created: "2023-07-26T10:55:39.881727-07:00"
+    created: "2023-08-08T16:13:08.466938-07:00"
     description: A Helm chart mod-calendar for Kubernetes
     digest: 8376cedcc26d379f59d6f9b453ab55343459ac90b666b0c46bd8d038165cd0ba
     name: mod-calendar
@@ -190,7 +190,7 @@ entries:
   mod-circulation:
   - apiVersion: v1
     appVersion: 19.0.0
-    created: "2023-07-26T10:55:39.882382-07:00"
+    created: "2023-08-08T16:13:08.468349-07:00"
     description: A Helm chart Folio mod-circulation for Kubernetes
     digest: 8e6ba70dd9c9e875726590d2986fb2110b2b0c4da799a58cd2e91ef541553478
     name: mod-circulation
@@ -201,7 +201,7 @@ entries:
   mod-circulation-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.88306-07:00"
+    created: "2023-08-08T16:13:08.469761-07:00"
     description: A Helm chart for Kubernetes
     digest: 475caf14e02eb3d376e29d44a7cd7a5ef962772f743a6c196d6e5dce13610e67
     name: mod-circulation-storage
@@ -212,7 +212,7 @@ entries:
   mod-codex-ekb:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.883726-07:00"
+    created: "2023-08-08T16:13:08.472132-07:00"
     description: A Helm chart for Kubernetes
     digest: 47a38fc0777deef8817de6fc35b6c992731b48c45526e9e554bfb3c5d9c730d1
     name: mod-codex-ekb
@@ -223,7 +223,7 @@ entries:
   mod-codex-inventory:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.884397-07:00"
+    created: "2023-08-08T16:13:08.47372-07:00"
     description: A Helm chart for Kubernetes
     digest: 53bf541ad32f2842aff221754ee69c84d14a497ef8ce937ef3ce2714b769629b
     name: mod-codex-inventory
@@ -234,7 +234,7 @@ entries:
   mod-codex-mux:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.885091-07:00"
+    created: "2023-08-08T16:13:08.47516-07:00"
     description: A Helm chart for Kubernetes
     digest: 3b1c9c333368334fe527974916a8626d9a68026dc5e2ed8447cf8812e981b591
     name: mod-codex-mux
@@ -245,7 +245,7 @@ entries:
   mod-configuration:
   - apiVersion: v1
     appVersion: 5.4.0
-    created: "2023-07-26T10:55:39.885856-07:00"
+    created: "2023-08-08T16:13:08.476843-07:00"
     description: A Helm chart mod-configuration for Kubernetes
     digest: ae80518c4de0287562f3e8f71f7bc88ace367e003f4fa8d9378024d9617dddd7
     name: mod-configuration
@@ -256,7 +256,7 @@ entries:
   mod-copycat:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.88658-07:00"
+    created: "2023-08-08T16:13:08.478514-07:00"
     description: A Helm chart for Kubernetes
     digest: 856fd188038f6a2675151e94f40f707561937116c108760973a0677db0b2a5ec
     name: mod-copycat
@@ -267,7 +267,7 @@ entries:
   mod-courses:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.887348-07:00"
+    created: "2023-08-08T16:13:08.480026-07:00"
     description: A Helm chart for Kubernetes
     digest: a5ccf1e4b478798f1fe1ccebac728af77f7c9cd929fcde9ef88e1e66ceffaac4
     name: mod-courses
@@ -278,7 +278,7 @@ entries:
   mod-data-export:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.888077-07:00"
+    created: "2023-08-08T16:13:08.48245-07:00"
     description: A Helm chart for Kubernetes
     digest: e6666fe97457d01545ba1aff4f13aea4ed97cdc44052c139cf7351c68521d1fa
     name: mod-data-export
@@ -289,7 +289,7 @@ entries:
   mod-data-export-spring:
   - apiVersion: v1
     appVersion: 1.0.1
-    created: "2023-07-26T10:55:39.888806-07:00"
+    created: "2023-08-08T16:13:08.484258-07:00"
     description: A Helm chart for Kubernetes
     digest: d21fe7492af04f4bc651e3df5ed61cd85f716d6818ca9c273fd5f424b40ee301
     name: mod-data-export-spring
@@ -300,7 +300,7 @@ entries:
   mod-data-export-worker:
   - apiVersion: v1
     appVersion: 1.0.1
-    created: "2023-07-26T10:55:39.889587-07:00"
+    created: "2023-08-08T16:13:08.485664-07:00"
     description: A Helm chart for Kubernetes
     digest: 780c3cd463e0352a38e2f5c8d054f93c7f8beb72e0d052b82419b81d147f1030
     name: mod-data-export-worker
@@ -311,7 +311,7 @@ entries:
   mod-data-import:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.891001-07:00"
+    created: "2023-08-08T16:13:08.487267-07:00"
     description: A Helm chart for Kubernetes
     digest: 61d194d60442d93618a063f1ae95511e3e0db1464c8b3be0d2034ec914c3138d
     name: mod-data-import
@@ -322,7 +322,7 @@ entries:
   mod-data-import-converter-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.891839-07:00"
+    created: "2023-08-08T16:13:08.489005-07:00"
     description: A Helm chart for Kubernetes
     digest: b0bc2419b4dc675301ed13de2f32757c31d46276363eaa12ab40ffa28fdd9a2a
     name: mod-data-import-converter-storage
@@ -333,7 +333,7 @@ entries:
   mod-ebsconet:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.892528-07:00"
+    created: "2023-08-08T16:13:08.490538-07:00"
     description: A Helm chart for Kubernetes
     digest: 13e03a5477b3f716726c04a88afdb62cf65bb92a32feecde652b978678e6521e
     name: mod-ebsconet
@@ -344,7 +344,7 @@ entries:
   mod-email:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.893272-07:00"
+    created: "2023-08-08T16:13:08.492103-07:00"
     description: A Helm chart mod-email for Kubernetes
     digest: 5e2e82918a6254386a444695a1e927eb2cee45d71d6785cc16f68aa7498343a5
     name: mod-email
@@ -355,7 +355,7 @@ entries:
   mod-erm-usage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.893964-07:00"
+    created: "2023-08-08T16:13:08.493704-07:00"
     description: A Helm chart for Kubernetes
     digest: 986aaf5c9cb891e402ac08aaa595f686f6f1db203213e5c2ae0c88d4cb903adb
     name: mod-erm-usage
@@ -366,7 +366,7 @@ entries:
   mod-erm-usage-harvester:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.894651-07:00"
+    created: "2023-08-08T16:13:08.495096-07:00"
     description: A Helm chart for Kubernetes
     digest: 8b709a229a2f14ee982845fc8fa41944f80fa2347c00e877593998b506c05571
     name: mod-erm-usage-harvester
@@ -377,7 +377,7 @@ entries:
   mod-eusage-reports:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.895372-07:00"
+    created: "2023-08-08T16:13:08.496627-07:00"
     description: A Helm chart for Kubernetes
     digest: c2ca8d6266e886cd9dd7e80c77b98516d40813c27de2f7a92009de5664434c46
     name: mod-eusage-reports
@@ -388,7 +388,7 @@ entries:
   mod-event-config:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.896114-07:00"
+    created: "2023-08-08T16:13:08.498141-07:00"
     description: A Helm chart mod-event-config for Kubernetes
     digest: 4f0570d20a9d36297fa3e05b2ce8e1bd50aa11b8aef5f9186143e883c3d4cb91
     name: mod-event-config
@@ -399,7 +399,7 @@ entries:
   mod-feesfines:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.896809-07:00"
+    created: "2023-08-08T16:13:08.499591-07:00"
     description: A Helm chart for Kubernetes
     digest: d4cbfe77135cc3c03cf0169cdc50bf1654d0a2ac5ff683ae4950e2a8422c0218
     name: mod-feesfines
@@ -410,7 +410,7 @@ entries:
   mod-finance:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.897601-07:00"
+    created: "2023-08-08T16:13:08.501069-07:00"
     description: A Helm chart for Kubernetes
     digest: 0db8343fd4fba2989416c272b2d1cd92fcff1b78360ab20642fb149572056b51
     name: mod-finance
@@ -421,7 +421,7 @@ entries:
   mod-finance-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.898331-07:00"
+    created: "2023-08-08T16:13:08.502507-07:00"
     description: A Helm chart for Kubernetes
     digest: 192213f1443f17cc519e46cb97b7f7f9b427a430afe02d60666274f85f4f98ff
     name: mod-finance-storage
@@ -432,7 +432,7 @@ entries:
   mod-gobi:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.89906-07:00"
+    created: "2023-08-08T16:13:08.504006-07:00"
     description: A Helm chart for Kubernetes
     digest: 33021b29f2eba3ab69ca72058b9d48509dd500e8032e15a7b78580597d16f283
     name: mod-gobi
@@ -443,7 +443,7 @@ entries:
   mod-graphql:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.899771-07:00"
+    created: "2023-08-08T16:13:08.505451-07:00"
     description: A Helm chart for Kubernetes
     digest: 0ee6aeaa19764ebf38e8411af0259ceb782ce2fb6eab6a7f7da610fe97b6c44c
     name: mod-graphql
@@ -454,7 +454,7 @@ entries:
   mod-inn-reach:
   - apiVersion: v1
     appVersion: 1.1.0
-    created: "2023-07-26T10:55:39.900458-07:00"
+    created: "2023-08-08T16:13:08.506906-07:00"
     description: A Helm chart for Kubernetes
     digest: ea65eac44bb3c94545c3fe54edb6cb0e32f8b451c0d8dff496073e413fbfdcc6
     name: mod-inn-reach
@@ -465,7 +465,17 @@ entries:
   mod-inventory:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.901202-07:00"
+    created: "2023-08-08T16:13:08.435835-07:00"
+    description: A Helm chart mod-invertory for Kubernetes
+    digest: b64dc25dd2af33499f99478b5db5848975c294661a165ba75c49981b7cf415a7
+    name: mod-inventory
+    type: application
+    urls:
+    - https://sul-dlss.github.io/folio-helm/chart/mod-inventory-0.1.36.tgz
+    version: 0.1.36
+  - apiVersion: v1
+    appVersion: 1.16.0
+    created: "2023-08-08T16:13:08.509788-07:00"
     description: A Helm chart mod-invertory for Kubernetes
     digest: c01d1edb49c358ef288468e9bb02b0782b46f68e68f3bfae39415417e56efa1e
     name: mod-inventory
@@ -476,9 +486,9 @@ entries:
   mod-inventory-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.901938-07:00"
+    created: "2023-08-08T16:13:08.51138-07:00"
     description: A Helm chart mod-inventory-storage for Kubernetes
-    digest: e92f05108f08755d62b20b6db075caa82bb57e408bcb0006e16f8a558cd985ef
+    digest: c927b40f1b00b19d8d6b2560407d0521839b50fa64a7d62c34fa3233da74511c
     name: mod-inventory-storage
     type: application
     urls:
@@ -487,7 +497,7 @@ entries:
   mod-inventory-update:
   - apiVersion: v1
     appVersion: 1.1.0
-    created: "2023-07-26T10:55:39.90288-07:00"
+    created: "2023-08-08T16:13:08.513211-07:00"
     description: A Helm chart for Kubernetes
     digest: 2bfdd1bde9cc2e3e056a4753ec75ad99f0313c86113c8d2c791cc68b03c96a91
     name: mod-inventory-update
@@ -498,7 +508,17 @@ entries:
   mod-invoice:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.90384-07:00"
+    created: "2023-08-08T16:13:08.437033-07:00"
+    description: A Helm chart for Kubernetes
+    digest: b42ad3af3f6aa59d3d075d5662ef49acde9838d85807936ecc7ebd388d41209f
+    name: mod-invoice
+    type: application
+    urls:
+    - https://sul-dlss.github.io/folio-helm/chart/mod-invoice-0.1.35.tgz
+    version: 0.1.35
+  - apiVersion: v1
+    appVersion: 1.16.0
+    created: "2023-08-08T16:13:08.51494-07:00"
     description: A Helm chart for Kubernetes
     digest: e4ed9305a68d085c210328a1c7f79cb5511eb862de9d001a8e06833a9dd09d0f
     name: mod-invoice
@@ -509,7 +529,7 @@ entries:
   mod-invoice-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.904564-07:00"
+    created: "2023-08-08T16:13:08.516414-07:00"
     description: A Helm chart for Kubernetes
     digest: 75b6e05eab8e7960416a89c2868244f24531e1fe7736f462956610afc3dbc505
     name: mod-invoice-storage
@@ -520,7 +540,7 @@ entries:
   mod-kb-ebsco-java:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.905261-07:00"
+    created: "2023-08-08T16:13:08.517895-07:00"
     description: A Helm chart for Kubernetes
     digest: 0db6b6537b57a05a5452ca6a904fe3814590d7d784110dd8a7a26ee84a39ebcd
     name: mod-kb-ebsco-java
@@ -531,7 +551,7 @@ entries:
   mod-ldp:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.905929-07:00"
+    created: "2023-08-08T16:13:08.519344-07:00"
     description: A Helm chart for Kubernetes
     digest: 589f1e0ff05f65b685cc7ae1ba24e0817dcdf09bb58f1c3f99f6cb1a0ce169ef
     name: mod-ldp
@@ -542,7 +562,7 @@ entries:
   mod-licenses:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.906587-07:00"
+    created: "2023-08-08T16:13:08.520852-07:00"
     description: A Helm chart for Kubernetes
     digest: 14efc32a4f2b27b468ec5a6685be293a200282c4f7ef79b142e7eaee8a9bb2be
     name: mod-licenses
@@ -553,7 +573,7 @@ entries:
   mod-login:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.907298-07:00"
+    created: "2023-08-08T16:13:08.522556-07:00"
     description: A Helm chart for Kubernetes
     digest: d06487cd97e58eae325092012e5e32aef62b50828c35c07d45ddf86e97e02d1b
     name: mod-login
@@ -564,7 +584,7 @@ entries:
   mod-login-saml:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.907993-07:00"
+    created: "2023-08-08T16:13:08.524319-07:00"
     description: A Helm chart for Kubernetes
     digest: 9ffcccb3918a63988caa1b7c36486bcff95e1faad27fc0f3797749db90b0a3be
     name: mod-login-saml
@@ -575,7 +595,7 @@ entries:
   mod-marccat:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.908728-07:00"
+    created: "2023-08-08T16:13:08.525954-07:00"
     description: A Helm chart for Kubernetes
     digest: ca48bc8325db8cdf488fc45fabdb554fc0eb5edeb2609d43e8c2310bc118eb91
     name: mod-marccat
@@ -586,7 +606,7 @@ entries:
   mod-ncip:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.909421-07:00"
+    created: "2023-08-08T16:13:08.527688-07:00"
     description: A Helm chart for Kubernetes
     digest: 0c1ada40f4aee31afc22065d4d2f981620ef21abe278177e4d9291dbb759f5fb
     name: mod-ncip
@@ -597,7 +617,7 @@ entries:
   mod-notes:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.910177-07:00"
+    created: "2023-08-08T16:13:08.529058-07:00"
     description: A Helm chart for Kubernetes
     digest: 4bd9a2f35b2e68af67b2c728fe42ad207485a7ebb0407d5b9813e90064a3d077
     name: mod-notes
@@ -608,7 +628,7 @@ entries:
   mod-notify:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.910926-07:00"
+    created: "2023-08-08T16:13:08.53048-07:00"
     description: A Helm chart for Kubernetes
     digest: 0813fd747d499832d1a5408b696e22a0342d9dac51181dbad94ae04f7a8fe069
     name: mod-notify
@@ -619,7 +639,7 @@ entries:
   mod-oa:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.911621-07:00"
+    created: "2023-08-08T16:13:08.531926-07:00"
     description: A Helm chart for Kubernetes
     digest: d5702945bdd3e1f8e5bab094f44283b21ffb7b51beb6a0049a5dbf3ff17e13ce
     name: mod-oa
@@ -630,7 +650,7 @@ entries:
   mod-oai-pmh:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.912342-07:00"
+    created: "2023-08-08T16:13:08.533362-07:00"
     description: A Helm chart for Kubernetes
     digest: 1868496e9a112abd74d94d14149c1b2c9db45504cdc601970f193dc94eabd835
     name: mod-oai-pmh
@@ -641,7 +661,7 @@ entries:
   mod-orders:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.912989-07:00"
+    created: "2023-08-08T16:13:08.534808-07:00"
     description: A Helm chart for Kubernetes
     digest: c97ca0b0b1e7a564eef58bda87187827a7f5a28e5a65c2d0f4ed4f6764b31b79
     name: mod-orders
@@ -652,7 +672,7 @@ entries:
   mod-orders-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.913751-07:00"
+    created: "2023-08-08T16:13:08.538193-07:00"
     description: A Helm chart for Kubernetes
     digest: a87cd0ab3236d921f8d9b1e041072e2c310d501f91d52ba8383b9c49d6a20125
     name: mod-orders-storage
@@ -663,7 +683,7 @@ entries:
   mod-organizations:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.91448-07:00"
+    created: "2023-08-08T16:13:08.539864-07:00"
     description: A Helm chart for Kubernetes
     digest: 7235f04b4ce23a96072215b5c7dbb3921e38f7b0834d25d79d3a8b407ffb71e2
     name: mod-organizations
@@ -674,7 +694,7 @@ entries:
   mod-organizations-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.915923-07:00"
+    created: "2023-08-08T16:13:08.541452-07:00"
     description: A Helm chart for Kubernetes
     digest: 79b7548a9e051d3f4c7934a6cd836b2970b8f218720fa91aea9004028c2d806b
     name: mod-organizations-storage
@@ -685,7 +705,7 @@ entries:
   mod-password-validator:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.916734-07:00"
+    created: "2023-08-08T16:13:08.54301-07:00"
     description: A Helm chart for Kubernetes
     digest: c6dfd419290ea21e56a97f7d9dcb4dc5e569afcc9929cead260be57dd7d3ab3c
     name: mod-password-validator
@@ -696,7 +716,7 @@ entries:
   mod-patron:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.917504-07:00"
+    created: "2023-08-08T16:13:08.544686-07:00"
     description: A Helm chart for Kubernetes
     digest: 957788037f23628c127c096c67296cecd4add9e90087995f0968599b8e89cbdf
     name: mod-patron
@@ -707,7 +727,7 @@ entries:
   mod-patron-blocks:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.91824-07:00"
+    created: "2023-08-08T16:13:08.546406-07:00"
     description: A Helm chart for Kubernetes
     digest: 97eeb40303e56775300102a23c6ec979a787605f48d1f53a01728a451bc967c5
     name: mod-patron-blocks
@@ -718,7 +738,7 @@ entries:
   mod-permissions:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.919001-07:00"
+    created: "2023-08-08T16:13:08.547877-07:00"
     description: A Helm chart mod-permissions for Kubernetes
     digest: 67957a8f9f6895977989091b6d5df12f59adb8f49432fab0cccb9a3bffbbcdf8
     name: mod-permissions
@@ -729,7 +749,7 @@ entries:
   mod-pubsub:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.919838-07:00"
+    created: "2023-08-08T16:13:08.5495-07:00"
     description: A Helm chart for Kubernetes
     digest: c33a22f752b8866448e96aae819f561fc74415d91397b4ea43c3a5d08310aa15
     name: mod-pubsub
@@ -740,7 +760,7 @@ entries:
   mod-quick-marc:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.920565-07:00"
+    created: "2023-08-08T16:13:08.550908-07:00"
     description: A Helm chart for Kubernetes
     digest: 0fb3e2499ce2ca5bb0eff2c149a92afb6e4c41945fb5fc109765ec473e49d971
     name: mod-quick-marc
@@ -751,7 +771,7 @@ entries:
   mod-remote-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.92129-07:00"
+    created: "2023-08-08T16:13:08.552369-07:00"
     description: A Helm chart for Kubernetes
     digest: aae1a151156a187b28a16d7f202fb764338ee9e3f3c9e998c6d91c68a4321a24
     name: mod-remote-storage
@@ -762,7 +782,7 @@ entries:
   mod-rtac:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.921996-07:00"
+    created: "2023-08-08T16:13:08.553843-07:00"
     description: A Helm chart for Kubernetes
     digest: 62635725e34c8f20754fd19507aa2b167d151b10c488362a2d9b56bbb7fec960
     name: mod-rtac
@@ -773,7 +793,7 @@ entries:
   mod-search:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.922745-07:00"
+    created: "2023-08-08T16:13:08.555704-07:00"
     description: A Helm chart for Kubernetes
     digest: d1f186068b766525ea4b2dad1f444af236e170de50464627940ca9beffff4925
     name: mod-search
@@ -784,7 +804,7 @@ entries:
   mod-sender:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.923541-07:00"
+    created: "2023-08-08T16:13:08.557229-07:00"
     description: A Helm chart for Kubernetes
     digest: cf94090228a10c84fa19708d4f3b5352b344e9f92b03e58ec598215a0998cb6a
     name: mod-sender
@@ -795,7 +815,7 @@ entries:
   mod-service-interaction:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.924246-07:00"
+    created: "2023-08-08T16:13:08.558766-07:00"
     description: A Helm chart for Kubernetes
     digest: 5fd4e3089af1668c562f3d3b2c370feb283c588a041733452f3f2a3ed485f094
     name: mod-service-interaction
@@ -806,7 +826,17 @@ entries:
   mod-source-record-manager:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.924958-07:00"
+    created: "2023-08-08T16:13:08.438419-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 9ac8f36c40ca51d02e82206b2de75ff30f83b9170f2dfddeda5fa4ba898f98c6
+    name: mod-source-record-manager
+    type: application
+    urls:
+    - https://sul-dlss.github.io/folio-helm/chart/mod-source-record-manager-0.1.37.tgz
+    version: 0.1.37
+  - apiVersion: v1
+    appVersion: 1.16.0
+    created: "2023-08-08T16:13:08.560231-07:00"
     description: A Helm chart for Kubernetes
     digest: 906fa73f085b7880a8b4ba8428b366804bafb5fd824e5948eaec514e27f93d06
     name: mod-source-record-manager
@@ -817,7 +847,7 @@ entries:
   mod-source-record-storage:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.92563-07:00"
+    created: "2023-08-08T16:13:08.561719-07:00"
     description: A Helm chart for Kubernetes
     digest: 0cfabfa68f702aca48d307b5653332dea81148d02a6bc8ccbc017d020dd71762
     name: mod-source-record-storage
@@ -828,7 +858,7 @@ entries:
   mod-tags:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.926345-07:00"
+    created: "2023-08-08T16:13:08.564161-07:00"
     description: A Helm chart for Kubernetes
     digest: 4ce6c49dc75abea95a1d8b790490ad08b5819485e77b4defbbb5145578cfbbd5
     name: mod-tags
@@ -839,7 +869,7 @@ entries:
   mod-template-engine:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.927205-07:00"
+    created: "2023-08-08T16:13:08.565619-07:00"
     description: A Helm chart for Kubernetes
     digest: 19a6d8e2721a57d8846b7e5b61df17efad9b03ca85b197865e94405b2530cb46
     name: mod-template-engine
@@ -850,7 +880,7 @@ entries:
   mod-user-import:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.928682-07:00"
+    created: "2023-08-08T16:13:08.567013-07:00"
     description: A Helm chart for Kubernetes
     digest: 6713de85845f03543729c0389147b92161ffbf215021a166f8e566b18b501cea
     name: mod-user-import
@@ -861,7 +891,7 @@ entries:
   mod-users:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.929394-07:00"
+    created: "2023-08-08T16:13:08.568868-07:00"
     description: A Helm chart Folio mod-users for Kubernetes
     digest: 10558db07dcd23a954e00959ecf64f2edc955034f2930f89f2782d5d074b6478
     name: mod-users
@@ -872,7 +902,7 @@ entries:
   mod-users-bl:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.9301-07:00"
+    created: "2023-08-08T16:13:08.570646-07:00"
     description: A Helm chart for Kubernetes
     digest: ba478cb1dd6c9c2f29b31fe9223d609e79434fdbaf3923f97971be7e51bcd1e3
     name: mod-users-bl
@@ -883,7 +913,7 @@ entries:
   mod-z3950:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.930799-07:00"
+    created: "2023-08-08T16:13:08.572327-07:00"
     description: A Helm chart for Kubernetes
     digest: 758108f22e7d62c11197fa52544cd7e499c6b5cf89d5d7445e90d15b403a4812
     name: mod-z3950
@@ -894,7 +924,7 @@ entries:
   okapi:
   - apiVersion: v2
     appVersion: 4.01.0
-    created: "2023-07-26T10:55:39.931702-07:00"
+    created: "2023-08-08T16:13:08.574269-07:00"
     description: A Helm chart OKAPI for Kubernetes
     digest: 72319035db4b4e92c7e0d1432ad47e2148d38895f8ae34ec8e4ec6d875997312
     name: okapi
@@ -905,7 +935,7 @@ entries:
   platform-complete:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.932349-07:00"
+    created: "2023-08-08T16:13:08.575927-07:00"
     description: A Helm chart Stripes Platform-complete for Kubernetes
     digest: aec7f71a78725bfcae7747bad9f79ad338a64004aa97a4016103b1d65b4cc67c
     name: platform-complete
@@ -916,7 +946,7 @@ entries:
   platform-core:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2023-07-26T10:55:39.932932-07:00"
+    created: "2023-08-08T16:13:08.577375-07:00"
     description: A Helm chart Stripes Platform-core for Kubernetes
     digest: aefc65fdf8a05e6783f68c8e8d67f6270187ce57ee738efa45b530b802f8d7da
     name: platform-core
@@ -927,7 +957,7 @@ entries:
   setae-api:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-07-26T10:55:39.933493-07:00"
+    created: "2023-08-08T16:13:08.578564-07:00"
     description: A Helm chart for Kubernetes
     digest: eae65b4e3c66a5f34c139c3bbd2d6eaf08bd9a13a1811f23ae5cce1f62166bd5
     name: setae-api
@@ -935,4 +965,4 @@ entries:
     urls:
     - https://sul-dlss.github.io/folio-helm/charts/setae-api-1.0.0.tgz
     version: 1.0.0
-generated: "2023-07-26T10:55:39.867964-07:00"
+generated: "2023-08-08T16:13:08.43428-07:00"
