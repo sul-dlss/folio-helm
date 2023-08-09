@@ -85,7 +85,7 @@ spec:
             - name: KAFKA_CONTRIBUTOR_CONCURRENCY
               value: {{ .Values.contributorConcurrency | quote }}
             {{- end }}
-            {{- if .Values.initialLanguages}}
+            {{- if .Values.initialLanguages }}
             - name: INITIAL_LANGUAGES
               value: {{ .Values.initialLanguages | quote }}
             {{- end }}
