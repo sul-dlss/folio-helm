@@ -86,6 +86,9 @@ javaOptions: -Dlog4j2.formatMsgNoLookups=true   -XX:MaxRAMPercentage=80 -XX:MinR
 dbMaxPoolSize: 10
 initialLanguages: []
 
+numKafkaPartitions: 12
+kafkaReplication: 3
+
 startupProbe:
   path: '/admin/health'
   periodSeconds: 5

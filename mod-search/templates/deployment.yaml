@@ -73,6 +73,14 @@ spec:
           {{- end }}
           {{- end }}
           env:
+            - name: KAFKA_CONTRIBUTORS_TOPIC_PARTITIONS
+              value: {{ .Values.numKafkaPartitions | default 1 | quote }}
+            - name: KAFKA_CONTRIBUTORS_TOPIC_REPLICATION_FACTOR
+              value: {{ .Values.kafkaReplication | default 3 | quote }}
+            - name: KAFKA_SUBJECTS_TOPIC_PARTITIONS
+              value: {{ .Values.numKafkaPartitions | default 1 | quote }}
+            - name: KAFKA_SUBJECTS_TOPIC_REPLICATION_FACTOR
+              value: {{ .Values.kafkaReplication | default 3 | quote }}
             {{- if .Values.maxPollRecords }}
             - name: KAFKA_CONSUMER_MAX_POLL_RECORDS
               value: {{ .Values.maxPollRecords | quote }}

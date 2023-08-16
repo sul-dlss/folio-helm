@@ -73,6 +73,10 @@ spec:
           {{- end }}
           {{- end }}
           env:
+            - name: DATA_EXPORT_JOB_UPDATE_TOPIC_PARTITIONS
+              value: {{ .Values.numKafkaPartitions | default 1 | quote }}
+            - name: EDI_EXPORT_HISTORY_TOPIC_PARTITIONS
+              value: {{ .Values.numKafkaPartitions | default 1 | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
