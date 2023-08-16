@@ -73,6 +73,8 @@ spec:
           {{- end }}
           {{- end }}
           env:
+            - name: REPLICATION_FACTOR
+              value: {{ .Values.kafkaReplication | default 3 | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:

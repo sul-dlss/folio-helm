@@ -80,11 +80,10 @@ tolerations: []
 affinity: {}
 
 # Folio specific
-javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=80 -XX:MinRAMPercentage=80 -XX:+UseG1GC
+javaOptions: -Dlog4j2.formatMsgNoLookups=true  -XX:MaxRAMPercentage=80 -XX:MinRAMPercentage=80 -XX:+UseG1GC -Dkafkacache.topic.number.partitions=12 -Dkafkacache.topic.replication.factor=3
 dbMaxPoolSize: 10
 dbReconnectinterval: 1000
 dbReconnectattempts: 3
-
 
 startupProbe:
   path: '/admin/health'

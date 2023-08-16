@@ -83,6 +83,9 @@ affinity: {}
 javaOptions: -Dlog4j2.formatMsgNoLookups=true   -XX:MaxRAMPercentage=80 -XX:MinRAMPercentage=80 -XX:+UseG1GC
 dbMaxPoolSize: 10
 
+numKafkaPartitions: 12
+kafkaReplication: 3
+
 startupProbe:
   path: '/admin/health'
   periodSeconds: 5

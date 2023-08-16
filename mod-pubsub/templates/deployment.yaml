@@ -73,6 +73,10 @@ spec:
           {{- end }}
           {{- end }}
           env:
+            - name: NUMBER_OF_PARTITIONS
+              value: {{ .Values.numKafkaPartitions | default 1 | quote }}
+            - name: REPLICATION_FACTOR
+              value: {{ .Values.kafkaReplication | default 3 | quote }}
             - name: DB_DATABASE
               valueFrom:
                 secretKeyRef:
