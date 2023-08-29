@@ -43,6 +43,9 @@ spec:
             - name: zserver-config
               mountPath: /usr/src/app/etc/config.sul.json
               subPath: config.sul.json
+            - name: zserver-config-ill
+              mountPath: /usr/src/app/etc/config.illiad.json
+              subPath: config.illiad.json
           lifecycle:
             postStart:
               exec:
@@ -136,6 +139,9 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
       - name: zserver-config
+        secret:
+          secretName: zserver.conf
+      - name: zserver-config-ill
         secret:
           secretName: zserver.conf
       {{- with .Values.nodeSelector }}
