@@ -54,9 +54,17 @@ ingress:
     - host:
       paths: []
   tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+
+secureingress:
+  enabled: false
+  annotations:
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: basic-auth
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
+  hosts:
+    - host:
+      paths: []
+  tls: []
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
