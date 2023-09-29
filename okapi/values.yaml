@@ -43,7 +43,8 @@ service:
   annotations: {}
 
 ingress:
-  enabled: false
+  enabled: true
+  name: okapi
   annotations:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/proxy-connect-timeout: "1800"
@@ -52,18 +53,19 @@ ingress:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
   hosts:
     - host:
-      paths: []
+      paths: ['/']
   tls: []
 
 secureingress:
-  enabled: false
+  enabled: true
+  name: okapi-secure
   annotations:
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/auth-secret: basic-auth
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
   hosts:
     - host:
-      paths: []
+      paths: ['/_/']
   tls: []
 
 resources:
