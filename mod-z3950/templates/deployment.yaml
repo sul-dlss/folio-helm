@@ -43,6 +43,9 @@ spec:
             - name: zserver-config
               mountPath: /usr/src/app/etc/config.sul.json
               subPath: config.sul.json
+            - name: mod-search-graphql-query
+              mountPath: /usr/src/app/etc/mod-search.graphql-query
+              subPath: mod-search.graphql-query
           lifecycle:
             postStart:
               exec:
@@ -91,12 +94,12 @@ spec:
             - name: FOLIO_USER
               valueFrom:
                 secretKeyRef:
-                  key: OKAPI_READONLY_APP_USER
+                  key: APP_USER
                   name: db-connect-modules
             - name: FOLIO_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: OKAPI_READONLY_APP_PASSWORD
+                  key: APP_PASSWORD
                   name: db-connect-modules
             - name: DB_DATABASE
               valueFrom:
@@ -138,6 +141,9 @@ spec:
       - name: zserver-config
         secret:
           secretName: zserver.conf
+      - name: mod-search-graphql-query
+        secret:
+          secretName: mod-search.graphql-query
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
