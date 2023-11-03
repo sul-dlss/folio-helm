@@ -142,11 +142,8 @@ spec:
         secret:
           secretName: zserver.conf
       - name: mod-search-graphql-query
-         configMap:
-           name: mod-search-graphql-query
-           items:
-           - key: mod-search.graphql-query
-             path: mod-search.graphql-query
+        secret:
+          secretName: mod-search.graphql-query
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
